@@ -69,16 +69,14 @@ class Menu extends React.Component{
 		}
 	}
 	toBasket = (id) =>{
-		this.setState({
-			basket: this.state.dishes.map((dish)=>{
-				if(dish._id == id){
-					return 
-					)
-				}else{
-					return 
-				} 
-			})
+		const index = array.findIndex(this.state.dishes, function(o){
+			return o._id == id 
 		})
+		console.log(index)
+		this.setState(prevState => {
+				basket: prevState.basket.push(this.state.dishes[index])
+		})
+		console.log(this.state.basket)
 	}
 	render(){
 		console.log(this.state.currentDish.length === 0)
