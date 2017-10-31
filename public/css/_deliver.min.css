@@ -45,7 +45,7 @@ button {
     font-family: RobotoMedium;
     src: url(../fonts/RobotoMedium/RobotoMedium.ttf);
     src: url(../fonts/RobotoMedium/RobotoMedium.eot);
-    src: url(../fonts/RobotoMedium/RobotoMedium.woff)
+    src: url(../fonts/RobotoMedium/RobotoMedium.woffba
 }
 
 @font-face {
@@ -86,7 +86,7 @@ section {
 footer .container,
 section .container {
     max-width: 1150px;
-    padding: 0 25px;
+    padding: 0 25px !important;
     width: 100%;
     margin: 0 auto
 }
@@ -797,8 +797,8 @@ button {
 
 .basket,
 .popover {
-    visibility: hidden;
-    opacity: 0
+    visibility: visible;
+    opacity: 1
 }
 
 .wrap_deliver .wrap_items .item .caption .button_active .quanti {
@@ -859,6 +859,9 @@ button {
 .basket {
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     background-color: #fff;
     -webkit-transition: visibility .7s, opacity .8sm, -webkit-transform .7s;
     transition: visibility .7s, opacity .8sm, transform .7s;
@@ -874,6 +877,8 @@ button {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    margin: 0px;
+    /*width: 100%;*/
     height: 70px;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -886,6 +891,9 @@ button {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    width: auto;
+    margin-bottom: 0px;
+    box-shadow: none;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -959,7 +967,8 @@ button {
 }
 
 .basket .wrap_basket .wrap_items .item button {
-    margin-left: 20px
+    margin-left: 20px;
+    margin-top: 0px;
 }
 
 @media all and (max-width:480px) {
@@ -1048,9 +1057,10 @@ button {
 }
 
 .basket .wrap_list .item ul .quanti em {
-    font-family: RobotoThin;
-    font-size: .9em;
-    font-style: normal
+    font-family: RobotoLight;
+    font-size: 1em;
+    font-style: normal;
+    color: gray;
 }
 
 .basket .wrap_list .item ul .quanti img {
@@ -1063,6 +1073,9 @@ button {
     border: 1px solid #eee;
     width: 30px;
     text-align: center
+}
+.basket .wrap_list .item ul .price {
+    min-width: 47px;
 }
 
 .basket .wrap_list .item ul .delete {

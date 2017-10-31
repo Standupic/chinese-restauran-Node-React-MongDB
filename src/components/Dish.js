@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import Increment from './Inсrement'
+import Decrement from './Decrement'
 
 class Button extends React.Component{
 	state = {
@@ -13,6 +15,10 @@ class Button extends React.Component{
 			})
 		}
 	}
+	decrement = (id) =>{
+		console.log(id)
+		this.props.decrement(id)
+	}
 	render(){
 		return(
 			<div className="button_active">
@@ -22,22 +28,31 @@ class Button extends React.Component{
 				<div className="button_active">
 					<button className="hidden" onClick={this.toBasket(this.props.id)}>Добавить в корзину</button>
 					<div className="quanti visible">
-						<img src="../img/minus.svg" />
+
+						<Decrement id={this.props.id} decrement={this.decrement}/>
+
 						<div className="quantity">
-							<span className=""></span>
+							<span className="">{this.props.quantity}</span>
 						</div>
-						<img src="../img/plus.svg" data-context="dishes" className="increment" data-flow="list" data-id="" alt=""/>
+
+						<Increment id={this.props.id} increment={this.increment}/>
+
 					</div>
 				</div>
 			}
 			</div>
+			
 		)
 	}
 }
 
+
 class Dish extends React.Component{
 	toBasket = (id) =>{
 		this.props.toBasket(id)
+	}
+	decrement = (id) =>{
+		this.props.decrement(id)
 	}
 	render(){
 		const currentDishes = this.props.items.map((dish)=>{
@@ -53,7 +68,7 @@ class Dish extends React.Component{
 							{dish.gram ? "гр" : "шт"}
 						</em></p>
 
-							<Button id={dish._id} toBasket={this.toBasket}/>
+							<Button id={dish._id} toBasket={this.toBasket} quantity={dish.quantity} decrement={this.props.decrement}/>
 					</div>
 				</div>
 			)
