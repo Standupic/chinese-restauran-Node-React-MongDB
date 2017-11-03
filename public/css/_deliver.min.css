@@ -105,7 +105,9 @@ button {
 .sidemenu ul {
     border-top: 1px solid #fff
 }
-
+.active{
+    border: 2px solid #f53a39;
+}
 .burger {
     width: 36px;
     opacity: 1;

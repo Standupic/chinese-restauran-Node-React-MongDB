@@ -3,10 +3,9 @@ import ReactDom from 'react-dom'
 
 class Basket extends React.Component{
 	render(){
-		console.log(this.props.product,"basket")
-		const product = this.props.product.map((dish)=>{
+		const product = this.props.product.map((dish,key)=>{
 			return(
-				<ul key={dish._id}>
+				<ul key={key}>
 					<li className="name" itemProp="name" itemProp="hasMenu">{dish.name}</li>
 					<li className="gramm">{dish.gramm}</li>
 					<li className="quanti"><em>Количество</em>
@@ -32,7 +31,7 @@ class Basket extends React.Component{
 							<div className="desktop"><span>Количество заказов: <em className="order">{this.props.product.length}</em></span><a href="#" className="show">показать</a></div>
 						</div>
 						<div className="item">
-							<span className="total">360</span><em>₽</em>
+							<span className="total">{this.props.total}</span><em>₽</em>
 							<button className="send_order">Оформить заказ</button>
 						</div>
 					</div>

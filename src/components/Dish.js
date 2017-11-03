@@ -4,25 +4,21 @@ import Increment from './Inсrement'
 import Decrement from './Decrement'
 
 class Button extends React.Component{
-	state = {
-		active: false
-	}
 	toBasket = (id) =>{
 		return ()=>{
 			this.props.toBasket(id)
-			this.setState({
-				active: true
-			})
 		}
 	}
 	decrement = (id) =>{
-		console.log(id)
 		this.props.decrement(id)
+	}
+	increment = (id) =>{
+		this.props.increment(id)
 	}
 	render(){
 		return(
 			<div className="button_active">
-			{!this.state.active ?
+			{!this.props.quantity ?
 					<button onClick={this.toBasket(this.props.id)}>Добавить в корзину</button>
 				:
 				<div className="button_active">
@@ -54,10 +50,13 @@ class Dish extends React.Component{
 	decrement = (id) =>{
 		this.props.decrement(id)
 	}
+	increment = (id) =>{
+		this.props.increment(id)
+	}
 	render(){
-		const currentDishes = this.props.items.map((dish)=>{
+		const currentDishes = this.props.items.map((dish,key)=>{
 			return(
-				<div className="item" key={dish._id} itemScope itemType="http://schema.org/Restaurant">
+				<div className={(dish.quantity) ? "active item" : "item"} key={dish._id} itemScope itemType="http://schema.org/Restaurant">
 					<div className="foto_dish"><img src={dish.img} alt="{name}" itemProp="photo" itemProp="hasMenu"/></div>
 					<div className="caption">
 						<p itemProp="name" itemProp="hasMenu">{dish.name}</p>
@@ -68,7 +67,11 @@ class Dish extends React.Component{
 							{dish.gram ? "гр" : "шт"}
 						</em></p>
 
-							<Button id={dish._id} toBasket={this.toBasket} quantity={dish.quantity} decrement={this.props.decrement}/>
+							<Button id={dish._id} 
+									toBasket={this.toBasket} 
+									quantity={dish.quantity} 
+									decrement={this.decrement}
+									increment={this.increment}/>
 					</div>
 				</div>
 			)
