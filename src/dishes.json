@@ -6,8 +6,9 @@
     "gramm": 200,
     "ingredient": "Утка",
     "img": "../img/deliver/Utka_po-pekinski2.jpg",
-    "dish": "dark",
-    "deliver": true
+    "dish": "Утка",
+    "deliver": true,
+    "category": 1
   },
   {
     "_id": "59875b4b5c1d4f657150ed04",
@@ -16,8 +17,9 @@
     "gramm": 200,
     "ingredient": "Утка",
     "img": "../img/deliver/Utka_po-pekinski.jpg",
-    "dish": "dark",
-    "deliver": true
+    "dish": "Утка",
+    "deliver": true,
+    "category": 1
   },
   {
     "_id": "59875b4b54ef47d186efab64",
@@ -26,7 +28,8 @@
     "gramm": 350,
     "ingredient": "Овощи или мясо, тесто",
     "img": "../img/deliver/Spring-roll_ovoshi.jpg",
-    "dish": "roll"
+    "dish": "Спринг, Роллы",
+    "category": 2
   },
   {
     "_id": "59875b4bc033f48c5e1599e2",
@@ -35,7 +38,8 @@
     "gramm": 350,
     "ingredient": "Креветки, тесто",
     "img": "../img/deliver/Spring-roll_krevetka.jpg",
-    "dish": "roll"
+    "dish": "Спринг, Роллы",
+    "category": 2
   },
   {
     "_id": "59875b4b0af536087f710a13",
@@ -44,7 +48,8 @@
     "gramm": 350,
     "ingredient": "Лук, тесто",
     "img": "../img/deliver/Lepeshka_s_lukom.jpg",
-    "dish": "roll"
+    "dish": "Спринг, Роллы",
+    "category": 2
   },
   {
     "_id": "59875b4ba229e48799c4e31a",
@@ -53,7 +58,8 @@
     "gramm": 280,
     "ingredient": "Ассорти салатов, маринованных в китайских специях из провинции Сычуань",
     "img": "../img/deliver/Salat_bar.jpg",
-    "dish": "salads"
+    "dish": "Cалаты",
+    "category": 3
   },
   {
     "_id": "59875b4b659f82bd316b80d8",
@@ -62,7 +68,8 @@
     "gramm": 210,
     "ingredient": "Огурец, айсберг, помидор, болгарский перец, кунжутное масло",
     "img": "../img/deliver/Sakat_iz_ovoshey.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b04df1da1256802a3",
@@ -71,7 +78,8 @@
     "gramm": 150,
     "ingredient": "",
     "img": "../img/deliver/Salat_iz_sparzhi.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b939064027aaa3a5f",
@@ -80,7 +88,8 @@
     "gramm": 150,
     "ingredient": "",
     "img": "../img/deliver/Salat_iz_soevih_rostkov.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b6e9393d7b4f03c6e",
@@ -89,7 +98,8 @@
     "gramm": 200,
     "ingredient": "",
     "img": "../img/deliver/Salat_kapusta_po-sichuanski.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b57230b3c3959f44c",
@@ -98,7 +108,8 @@
     "gramm": 150,
     "ingredient": "",
     "img": "../img/deliver/Salat_iz_morkovi.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b25c7bd63becacefe",
@@ -107,7 +118,8 @@
     "gramm": 180,
     "ingredient": "",
     "img": "../img/deliver/Salat_uwko_po-sichuanski.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4bcc61524da398ef65",
@@ -116,7 +128,8 @@
     "gramm": 150,
     "ingredient": "",
     "img": "../img/deliver/Salat_iz_drevesnih_gribov.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b87e0ddabb9846547",
@@ -125,7 +138,8 @@
     "gramm": 250,
     "ingredient": "Кальмар, болгарский перец, огурец, лук, кинза, перец чили с арахисом",
     "img": "../img/deliver/Salat_kalmari_ovoshi.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b7bc8dc9df7ab9e7a",
@@ -134,7 +148,8 @@
     "gramm": 220,
     "ingredient": "Грибы золотые нити, огурец, болгарский перец, соевый соус, масло чили, уксус, рисовый",
     "img": "../img/deliver/Salat_Gold_niti.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b5bec7dea1995fbbf",
@@ -143,7 +158,8 @@
     "gramm": 250,
     "ingredient": "Соевая лапша, тофу, огурец, морковь, перец болгарский, чеснок, арахис, кунжутное масло, чили масло",
     "img": "../img/deliver/Salat_Harbin.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b02d7324b9b4c481f",
@@ -152,7 +168,8 @@
     "gramm": 250,
     "ingredient": "Лук, огурец, перец болгарский, стрючковый перец, арахис, кунжутное масло, кинза",
     "img": "../img/deliver/Salat_Tigr.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b275c9bd26161b3fa",
@@ -161,7 +178,8 @@
     "gramm": 200,
     "ingredient": "Тофу, чеснок, чили масло, кунжутное масло, кинза",
     "img": "../img/deliver/Salat_Tofu.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b0c78a67f3ec6951d",
@@ -170,7 +188,8 @@
     "gramm": 250,
     "ingredient": "",
     "img": "../img/deliver/Salat_bitie_ogurci.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b94689564dbc098b9",
@@ -179,7 +198,8 @@
     "gramm": 200,
     "ingredient": "Говяжий язык, болгарский перец, чили перец c арахисом, чили масло",
     "img": "../img/deliver/Salat_iz_yazika_i_rubca.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b71efd10dd6ec5da4",
@@ -188,7 +208,8 @@
     "gramm": 200,
     "ingredient": "Отварной язык, огурец, морковь, кунжут, чеснок, соевый соус",
     "img": "../img/deliver/Salat_iz_yazika.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b6d1d35c9e77d2061",
@@ -197,7 +218,8 @@
     "gramm": 180,
     "ingredient": "На выбор: свиной или говяжий рубец, болгарский перец, огурцы, зеленый лук, чили перец",
     "img": "../img/deliver/Salat_ostriy_rubec.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b6b4026cdd4968c2d",
@@ -206,7 +228,8 @@
     "gramm": 260,
     "ingredient": "Тигровые креветки, айсберг, сыр пармезан, гренки, помидоры черри, соус цезарь",
     "img": "../img/deliver/Salat_ceasar_krevetka.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4bb83bc791e75b2be8",
@@ -215,7 +238,8 @@
     "gramm": 180,
     "ingredient": "Перец болгарский, лук, чили с арахисом, кинза, кунжутное масло, чили масло, пять специй",
     "img": "../img/deliver/Salat_ostraya_govyadina.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b950be80c18d5adc6",
@@ -224,7 +248,8 @@
     "gramm": 250,
     "ingredient": "Куриное филе, айсберг, сыр пармезан, гренки, помидоры черри, соус цезарь",
     "img": "../img/deliver/Salat_ceasar_kurica.jpg",
-    "dish": "salads"
+    "dish": "Салаты",
+    "category": 3
   },
   {
     "_id": "59875b4b33e6767094883078",
@@ -233,7 +258,8 @@
     "gramm": 300,
     "ingredient": "Знаменитый азиатский суп, Креветки, кальмары, мидии, кокосовое молоко, грибы, помидоры",
     "img": "../img/deliver/Soup_Tom_Yam.jpg",
-    "dish": "soup"
+    "dish": "Супы",
+    "category": 4
   },
   {
     "_id": "59875b4b2f5887552f736d55",
@@ -242,7 +268,8 @@
     "gramm": 300,
     "ingredient": "Аналог супа Том ям с курицей и креветками",
     "img": "../img/deliver/Soup_Tom_Yam.jpg",
-    "dish": "soup"
+    "dish": "Супы",
+    "category": 4
   },
   {
     "_id": "59875b4bf1db6f6bd7cb1f83",
@@ -251,7 +278,8 @@
     "gramm": 250,
     "ingredient": "Грибы сяньгу, черные древесные грибы, ростки бамбука, перец болгарский, филе цыпленка, сыр тофу, яйцо, кинза",
     "img": "../img/deliver/Soup_kislo-ostriy.jpg",
-    "dish": "soup"
+    "dish": "Супы",
+    "category": 4
   },
   {
     "_id": "59875b4b92705ca198c26bfe",
@@ -260,7 +288,8 @@
     "gramm": 250,
     "ingredient": "",
     "img": "../img/deliver/Soup_kuriniy_s_gribami.jpg",
-    "dish": "soup"
+    "dish": "Супы",
+    "category": 4
   },
   {
     "_id": "59875b4b9ce1727139bc4144",
@@ -269,7 +298,8 @@
     "gramm": 300,
     "ingredient": "Филе говядины, лапша удон, помидоры, грибы шампиньоны, перец болгарский",
     "img": "../img/deliver/Soup_Udon_govyadina.jpg",
-    "dish": "soup"
+    "dish": "Супы",
+    "category": 4
   },
   {
     "_id": "59875b4b9675f95c0bafcd85",
@@ -278,7 +308,8 @@
     "gramm": 300,
     "ingredient": "Филе ципленка, лапша удон, помидоры, грибы шампиньоны, перец болгарский",
     "img": "../img/deliver/Soup_Udon_kurica.jpg",
-    "dish": "soup"
+    "dish": "Супы",
+    "category": 4
   },
   {
     "_id": "59875b4b06c6cead5af72c09",
@@ -287,7 +318,8 @@
     "gramm": 250,
     "ingredient": "Куриный бульон, шампиньоны, сливки",
     "img": "../img/deliver/Soup_creme_gribi.jpg",
-    "dish": "soup"
+    "dish": "Супы",
+    "category": 4
   },
   {
     "_id": "59875b4b12b5297a89220461",
@@ -296,7 +328,8 @@
     "gramm": 280,
     "ingredient": "Куриный филе, болгарский перец, древесные грибы, острый соус",
     "img": "../img/deliver/Kurica_po-sichuanski.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4b53b1e3c03adbc3c7",
@@ -305,7 +338,8 @@
     "gramm": 300,
     "ingredient": "Болгарский перец, ананас",
     "img": "../img/deliver/Svinie_rebra_v_kislo-sladkom.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4be7dfab9cd17d42bf",
@@ -314,7 +348,8 @@
     "gramm": 200,
     "ingredient": "Куриное филе, болгарский перец, анализы",
     "img": "../img/deliver/Kurica_v_kislo-sladkom.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4bc9112332f9a0339b",
@@ -323,7 +358,8 @@
     "gramm": 280,
     "ingredient": "Куриное филе, грибы сяньгу,болгарский перец, острый соус",
     "img": "../img/deliver/Kurica_kumpao.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4be696cf1a5c70e4d8",
@@ -332,7 +368,8 @@
     "gramm": 280,
     "ingredient": "Свиная вырезка в кляре, болгарский перец, ананас",
     "img": "../img/deliver/Svinina_s_anansami.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4b2884f8e03fed9f73",
@@ -341,7 +378,8 @@
     "gramm": 200,
     "ingredient": "Филе свинины, болгарский перец, древесные грибы, ростки бамбука, лук, острый соус",
     "img": "../img/deliver/Svinina_v_ostrom.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4b3ce00c08fce62f2b",
@@ -350,7 +388,8 @@
     "gramm": 260,
     "ingredient": "Традиционное блюдо из северного Китая с кисло-сладким вкусом",
     "img": "../img/deliver/Svinina_Gubadzho.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4b79df2565682ed7e4",
@@ -359,7 +398,8 @@
     "gramm": 280,
     "ingredient": "Болгарский перец, грибы сяньгу, цуккини, лук",
     "img": "../img/deliver/Kare.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4bfdc537077d8330a9",
@@ -368,7 +408,8 @@
     "gramm": 260,
     "ingredient": "Филе говядины, болгарский перец, кинза, перец чили, лук, острый соус",
     "img": "../img/deliver/Govyadina_ostraya_v_ustrichnom.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4b22d2aa12bd70bee1",
@@ -377,7 +418,8 @@
     "gramm": 250,
     "ingredient": "",
     "img": "../img/deliver/Govyadina_s_gribami.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4bdc7ea0ab04cb2d93",
@@ -386,16 +428,18 @@
     "gramm": 250,
     "ingredient": "Филе баранины, лук, перец болгарский, грибы сяньгу, соево-устричный соус",
     "img": "../img/deliver/Baranina_zira.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
-    "_id": "59875b4bf0c87a423c7fcdcb",
+    "_id": "59875b4bf0c87a423c7fcdc1",
     "name": "Говядина с овощами на сковородке",
     "price": 420,
     "gramm": 280,
     "ingredient": "Филе говядины, лук, перец болгарский, грибы сяньгу, соево-устричный соус",
     "img": "../img/deliver/Govyadina_na_skovorode.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4bf0c87a423c7fcdcb",
@@ -404,7 +448,8 @@
     "gramm": 280,
     "ingredient": "Филе баранины, лук, перец болгарский, грибы сяньгу, соево-устричный соус",
     "img": "../img/deliver/Govyadina_na_skovorode.jpg",
-    "dish": "meal"
+    "dish": "Блюды из мяса",
+    "category": 5
   },
   {
     "_id": "59875b4bc410e268a6f984e1",
@@ -413,7 +458,8 @@
     "gramm": 280,
     "ingredient": "Баклажаны, чили перец, древесные грибы лук, перец болгарский",
     "img": "../img/deliver/Baklazhani_v_soevom_s_Chili.jpg",
-    "dish": "vegetable"
+    "dish": "Овощи,горячее",
+    "category": 6
   },
   {
     "_id": "59875b4bc7e01570c5afc6ee",
@@ -422,7 +468,8 @@
     "gramm": 280,
     "ingredient": "Сыр тофу, болгарский перец, древесные грибы, острый соус",
     "img": "../img/deliver/Tofu_po-sichuanski.jpg",
-    "dish": "vegetable"
+    "dish": "Овощи,горячее",
+    "category": 6
   },
   {
     "_id": "59875b4ba70fcf969275ab1d",
@@ -431,7 +478,8 @@
     "gramm": 280,
     "ingredient": "Баклажаны, лук, болгарский перец",
     "img": "../img/deliver/Baklazhani_v_soevom.jpg",
-    "dish": "vegetable"
+    "dish": "Овощи,горячее",
+    "category": 6
   },
   {
     "_id": "59875b4ba7322cc8947715ba",
@@ -440,7 +488,8 @@
     "gramm": 300,
     "ingredient": "Баклажаны, лук, болгарский перец, картофель",
     "img": "../img/deliver/Baklazhani_po-domashnemu.jpg",
-    "dish": "vegetable"
+    "dish": "Овощи,горячее",
+    "category": 6
   },
   {
     "_id": "59875b4b358475cdea828b5a",
@@ -449,7 +498,8 @@
     "gramm": 300,
     "ingredient": "Тофа, соевый сыр в остром соусе",
     "img": "../img/deliver/Tofu_Mapo.jpg",
-    "dish": "vegetable"
+    "dish": "Овощи,горячее",
+    "category": 6
   },
   {
     "_id": "59875b4bbde29a86c41e95d5",
@@ -458,7 +508,8 @@
     "gramm": "",
     "ingredient": "Выбор: жареная/на пару",
     "img": "../img/deliver/Dorada.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4b369705a0a0355410",
@@ -467,7 +518,8 @@
     "gramm": "",
     "ingredient": "",
     "img": "../img/deliver/Karp_po-imperatorski.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4bd463f284caf477bb",
@@ -476,7 +528,8 @@
     "gramm": 300,
     "ingredient": "Креветки, ананс, кисло-сладкий соус",
     "img": "../img/deliver/Krevetki_s_ananasami.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4bb2ef3e700af6bb88",
@@ -485,7 +538,8 @@
     "gramm": 300,
     "ingredient": "Тигровые креветки, грибы древесные, шампиньоны, цуккини, болгарский перец",
     "img": "../img/deliver/Krevetki_s_ovoshami.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4b04bdbb174cea9b79",
@@ -494,7 +548,8 @@
     "gramm": 300,
     "ingredient": "Тигровые креветки, грибы древесные, шампиньоны, цуккини, болгарский перец",
     "img": "../img/deliver/Krevetki_s_ovoshami.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4b521214fe55d1f913",
@@ -503,7 +558,8 @@
     "gramm": 260,
     "ingredient": "Тигровые креветки, чили перец",
     "img": "../img/deliver/Krevetki_chili.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4bc93afb20f95df9ae",
@@ -512,7 +568,8 @@
     "gramm": 700,
     "ingredient": "Фаланги обжаренные с луком и имбирем",
     "img": "../img/deliver/Krab.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4b45f907a8b46bccf8",
@@ -521,7 +578,8 @@
     "gramm": 150,
     "ingredient": "Подается на подушке из овощей",
     "img": "../img/deliver/Salmon.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4b04ccaad91100b686",
@@ -530,7 +588,8 @@
     "gramm": 240,
     "ingredient": "Тигровые креветки в темпуре и соусе васаби",
     "img": "../img/deliver/Krevetki_wasabi.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4bfc069dbc4e3d6401",
@@ -539,7 +598,8 @@
     "gramm": 260,
     "ingredient": "Осьминоги, болгарский перец, лук, грибы сяньгу",
     "img": "../img/deliver/Osminogi_miso.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4b736d3ba0e93e63bc",
@@ -548,7 +608,8 @@
     "gramm": 300,
     "ingredient": "Креветки, кальмары, мидии в соусе Хой син, грибы сяньгу, перец болгарский, лук",
     "img": "../img/deliver/Moreprodukti_na_skovorode.jpg",
-    "dish": "fish"
+    "dish": "Рыба,морепродукты",
+    "category": 7
   },
   {
     "_id": "59875b4b3a4c6722fa49e701",
@@ -557,7 +618,8 @@
     "gramm": 300,
     "ingredient": "Рисовая лапша, тигровые креветки, филе цыпленка, яйцо, кинза, карри",
     "img": "../img/deliver/Lapsha_po-singapurski.jpg",
-    "dish": "noodles"
+    "dish": "Лапша",
+    "category": 8
   },
   {
     "_id": "59875b4b14fa4f6599663a0f",
@@ -566,7 +628,8 @@
     "gramm": 300,
     "ingredient": "Рисовая лапша, болгарский перец, морковь, соевые ростки, цуккини",
     "img": "../img/deliver/Lapsha_govyadina_v_ustrichnom.jpg",
-    "dish": "noodles"
+    "dish": "Лапша",
+    "category": 8
   },
   {
     "_id": "59875b4b014d70626e79ea7c",
@@ -575,7 +638,8 @@
     "gramm": 300,
     "ingredient": "Свинина или говядина на выбор",
     "img": "../img/deliver/Lapsha_soyevaya_govaydina.jpg",
-    "dish": "noodles"
+    "dish": "Лапша",
+    "category": 8
   },
   {
     "_id": "59875b4bbe5af5679967ce10",
@@ -584,7 +648,8 @@
     "gramm": 300,
     "ingredient": "Тигровые креветки, лук, перец болгарский, морковь, соевые ростки, цуккини",
     "img": "../img/deliver/Lapsha_Udon_krevetka.jpg",
-    "dish": "noodles"
+    "dish": "Лапша",
+    "category": 8
   },
   {
     "_id": "59875b4bbe922d3e7de4191e",
@@ -593,7 +658,8 @@
     "gramm": 300,
     "ingredient": "Куриное филе, лук, перец болгарский, морковь, соевые ростки, цуккини",
     "img": "../img/deliver/Lapsha_Udon_kurica.jpg",
-    "dish": "noodles"
+    "dish": "Лапша",
+    "category": 8
   },
   {
     "_id": "59875b4b80b6de75c630a0d6",
@@ -602,7 +668,8 @@
     "gramm": 260,
     "ingredient": "лук, перец болгарский, морковь, соевые ростки, цуккини",
     "img": "../img/deliver/Lapsha_Udon_ovoshi.jpg",
-    "dish": "noodles"
+    "dish": "Лапша",
+    "category": 8
   },
   {
     "_id": "59875b4bdc2f90609b781f78",
@@ -611,7 +678,8 @@
     "gramm": 300,
     "ingredient": "Говядина, лук, перец болгарский, морковь, соевые ростки, цуккини",
     "img": "../img/deliver/Lapsha_Udon_govyadina.jpg",
-    "dish": "noodles"
+    "dish": "Лапша",
+    "category": 8
   },
   {
     "_id": "59875b4be92b8066cd7f30a8",
@@ -620,7 +688,8 @@
     "gramm": 300,
     "ingredient": "Тигровые креветки, лук, перец болгарский, морковь, соевые ростки, цуккини",
     "img": "../img/deliver/Rice_krevetki.jpg",
-    "dish": "rise"
+    "dish": "Рис",
+    "category": 9
   },
   {
     "_id": "59875b4b69a515d259dbf961",
@@ -629,7 +698,8 @@
     "gramm": 300,
     "ingredient": "Куриное филе, болгарский перец, лук, яйцо",
     "img": "../img/deliver/Rice_kurica.jpg",
-    "dish": "rise"
+    "dish": "Рис",
+    "category": 9
   },
   {
     "_id": "59875b4bef7420beeb530ea4",
@@ -638,7 +708,8 @@
     "gramm": 200,
     "ingredient": "Зелень, болгарский перец, лук, яйцо",
     "img": "../img/deliver/Rice_yaico_ovosh.jpg",
-    "dish": "rise"
+    "dish": "Рис",
+    "category": 9
   },
   {
     "_id": "59875b4b8faec02007c48404",
@@ -647,7 +718,8 @@
     "gramm": 280,
     "ingredient": "С ветчиной, креветаки и овощами",
     "img": "../img/deliver/Rice_Yanchzhou.jpg",
-    "dish": "rise"
+    "dish": "Рис",
+    "category": 9
   },
   {
     "_id": "59875b4b3e0ff64fb1ab44de",
@@ -656,7 +728,8 @@
     "gramm": 300,
     "ingredient": "Пекинская утка, болгарский перец, лук, шампиньоны, яйцо",
     "img": "../img/deliver/Rice_utka.jpg",
-    "dish": "rise"
+    "dish": "Рис",
+    "category": 9
   },
   {
     "_id": "59875b4b53c8c805550587f0",
@@ -665,7 +738,8 @@
     "gramm": 300,
     "ingredient": "Рис в сливочном соусе, креветки, курица, кокосовое молоко",
     "img": "../img/deliver/Rice_krevetka_kurica_v_slivochnom.jpg",
-    "dish": "rise"
+    "dish": "Рис",
+    "category": 9
   },
   {
     "_id": "59875b4b04f422c4e1189005",
@@ -675,7 +749,8 @@
     "quan": 4,
     "ingredient": "",
     "img": "../img/deliver/Dim-sum_assorti.jpg",
-    "dish": "pelemeni"
+    "dish": "Пельмени, дим самы",
+    "category": 10
   },
   {
     "_id": "59875b4b96fd48a3f990a055",
@@ -685,7 +760,8 @@
     "quan": 1,
     "ingredient": "Говядина, свянина",
     "img": "../img/deliver/Dim-sum_govyadina-svinina.jpg",
-    "dish": "pelemeni"
+    "dish": "Пельмени, дим самы",
+    "category": 10
   },
   {
     "_id": "59875b4b2b510301ab156542",
@@ -695,7 +771,8 @@
     "quan": 1,
     "ingredient": "Овощи",
     "img": "../img/deliver/Dim-sum_ovoshi.jpg",
-    "dish": "pelemeni"
+    "dish": "Пельмени, дим самы",
+     "category": 10
   },
   {
     "_id": "59875b4bf91004604e7957d0",
@@ -705,7 +782,8 @@
     "quan": 1,
     "ingredient": "Курица, кревети",
     "img": "../img/deliver/Dim-sum_kurica-krevetka.jpg",
-    "dish": "pelemeni"
+    "dish": "Пельмени, дим самы",
+     "category": 10
   },
   {
     "_id": "59875b4bffa9300a821882f0",
@@ -715,7 +793,8 @@
     "quan": 1,
     "ingredient": "Кревети",
     "img": "../img/deliver/Dim-sum_krevetka.jpg",
-    "dish": "pelemeni"
+    "dish": "Пельмени, дим самы",
+     "category": 10
   },
   {
     "_id": "59875b4b3936b88e6f7b2655",
@@ -725,7 +804,8 @@
     "quan": 8,
     "ingredient": "Свинина, тесто",
     "img": "../img/deliver/Pelmeni.jpg",
-    "dish": "pelemeni"
+    "dish": "Пельмени, дим самы",
+     "category": 10
   },
   {
     "_id": "59875b4b35b6a81a9ef98385",
@@ -735,7 +815,8 @@
     "quan": 8,
     "ingredient": "Говядина, тесто",
     "img": "../img/deliver/Pelmeni.jpg",
-    "dish": "pelemeni"
+    "dish": "Пельмени, дим самы",
+     "category": 10
   },
   {
     "_id": "59875b4b3aff95d37a8091a1",
@@ -745,7 +826,8 @@
     "quan": 8,
     "ingredient": "Баранена, тесто",
     "img": "../img/deliver/Pelmeni.jpg",
-    "dish": "pelemeni"
+    "dish": "Пельмени, дим самы",
+     "category": 10
   },
   {
     "_id": "59875b4b3a5d9a7e9742e340",
@@ -755,7 +837,8 @@
     "quan": 8,
     "ingredient": "Креветки, тесто",
     "img": "../img/deliver/Pelmeni.jpg",
-    "dish": "pelemeni"
+    "dish": "Пельмени, дим самы",
+     "category": 10
   },
   {
     "_id": "59875b4ba6e0ff21dba73321",
@@ -764,7 +847,8 @@
     "gramm": "100/30",
     "ingredient": "",
     "img": "../img/deliver/Salat_Chuka.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+     "category": 11
   },
   {
     "_id": "59875b4bad0f18a6a6e1581d",
@@ -773,7 +857,8 @@
     "gramm": 200,
     "ingredient": "",
     "img": "../img/deliver/Soup_Miso.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b9e37d75509cfcef9",
@@ -782,7 +867,8 @@
     "gramm": 200,
     "ingredient": "",
     "img": "../img/deliver/Soup_Suimono.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b7c2745b15a3da61e",
@@ -791,7 +877,8 @@
     "gramm": 610,
     "ingredient": "Ролл яки маки, ролл филадельфия, ролл с креветками, суши тобико, суши лосось, суши чука",
     "img": "../img/deliver/Roll-nabor_Fudziyama.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4bd99eb4a7396579aa",
@@ -800,7 +887,8 @@
     "gramm": 795,
     "ingredient": "Горячая филадельфия, ролл аляска, ролл с лососем, ролл с угрем, суши копченый лосось, cуши чука, суши тобико",
     "img": "../img/deliver/Soup_Suimono.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4bae2ad85108c07c90",
@@ -809,7 +897,8 @@
     "gramm": 1100,
     "ingredient": "Черный дракон, красный дракон, бонито, калифорния с крабом, ролл с огурцом, суши лосось, суши креветка",
     "img": "../img/deliver/Roll-nabor_Drakon.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b7f6bd2d6095a07c1",
@@ -818,7 +907,8 @@
     "gramm": 110,
     "ingredient": "",
     "img": "../img/deliver/Roll_ogurec.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b180772213143849e",
@@ -827,7 +917,8 @@
     "gramm": 110,
     "ingredient": "",
     "img": "../img/deliver/Roll_avokado.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4ba685553e67b3febb",
@@ -836,7 +927,8 @@
     "gramm": 100,
     "ingredient": "",
     "img": "../img/deliver/Roll_salmon.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b352fd544e53e8cfd",
@@ -845,7 +937,8 @@
     "gramm": 110,
     "ingredient": "",
     "img": "../img/deliver/Roll_ugor.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b81ad98959e422701",
@@ -854,7 +947,8 @@
     "gramm": 220,
     "ingredient": "Лосось, сыр филадельфия",
     "img": "../img/deliver/Roll_Filadelfiya.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b4cbe321b26909ed8",
@@ -863,7 +957,8 @@
     "gramm": 210,
     "ingredient": "Краб, огурец, авокадо, майонез, икра тобико",
     "img": "../img/deliver/Roll_Californiya.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b1a7b4d95dc29da22",
@@ -872,7 +967,8 @@
     "gramm": 210,
     "ingredient": "Лосось, огурец, авокадо, майонез, икра тобико",
     "img": "../img/deliver/Roll_Californiya.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b733541f125793b72",
@@ -881,7 +977,8 @@
     "gramm": 210,
     "ingredient": "Креветка, огурец, авокадо, майонез, икра тобико",
     "img": "../img/deliver/Roll_Californiya.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4bf97606c0eff5f7c9",
@@ -890,7 +987,8 @@
     "gramm": 220,
     "ingredient": "Угорь, лосось, авокадо, огурец, сыр филадельфия",
     "img": "../img/deliver/Roll_Californiya.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b6e05dd4352443278",
@@ -899,7 +997,8 @@
     "gramm": 220,
     "ingredient": "Угорь, лосось, авокадо, огурец, сыр филадельфия",
     "img": "../img/deliver/Roll_Canada.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b89724e5c5f6bad20",
@@ -908,7 +1007,8 @@
     "gramm": 240,
     "ingredient": "Лосось, коктейльная креветка, огурец, сыр филадельфия",
     "img": "../img/deliver/Roll_Yaki_Maki.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b917273c1037ba128",
@@ -917,7 +1017,8 @@
     "gramm": 240,
     "ingredient": "Угорь, креветка, огурец, сыр филадельфия",
     "img": "../img/deliver/Roll_Cherniy_Drakon.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b2bb7d04ed11cdc7a",
@@ -926,7 +1027,8 @@
     "gramm": 210,
     "ingredient": "Лосось копченый, креветка, огурец, айсберг,  сыр филадельфия",
     "img": "../img/deliver/Roll_Krasniy_Drakon.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4beb38227b1492c753",
@@ -935,7 +1037,8 @@
     "gramm": 210,
     "ingredient": "Тунец, авокадо, огурец, спай соус",
     "img": "../img/deliver/Roll_Karashi.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4bda09dce97bd8a16d",
@@ -944,7 +1047,8 @@
     "gramm": 210,
     "ingredient": "Лосось, авокадо, огурец, майонез, кунжут",
     "img": "../img/deliver/Roll_Alyaska.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4bf001dc7c9b20b8e4",
@@ -953,7 +1057,8 @@
     "gramm": 200,
     "ingredient": "Лосось, огурец, айсберг, стружка тунца, сыр филадельфия",
     "img": "../img/deliver/Roll_Bonito.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4be0567fdcb5bf8a12",
@@ -962,7 +1067,8 @@
     "gramm": 240,
     "ingredient": "Лосось, угорь, креветка, сыр филадельфия",
     "img": "../img/deliver/Roll_Honsu.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b3ac0f4767b0b1530",
@@ -971,7 +1077,8 @@
     "gramm": 210,
     "ingredient": "Мясо краба, авокадо, майонез, кляр",
     "img": "../img/deliver/Roll_Californiya_Hot.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b8a9fcff334d15a79",
@@ -980,7 +1087,8 @@
     "gramm": 260,
     "ingredient": "Угорь, лосось, креветка, авокадо, сыр филадельфия",
     "img": "../img/deliver/Roll_SenSey.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b74d3cac09a184ae7",
@@ -989,7 +1097,8 @@
     "gramm": 200,
     "ingredient": "Лосось, авокадо, сыр филадельфия, кляр",
     "img": "../img/deliver/Roll_Filadelfiya_ho.jpg",
-    "dish": "japan"
+    "dish": "Роллы,наборы",
+    "category": 11
   },
   {
     "_id": "59875b4b6c613fc7b99325ae",
@@ -998,7 +1107,8 @@
     "gramm": 500,
     "ingredient": "Курица, колбаса пепперони, ветчина, салями милано, сыр моцарелла",
     "img": "../img/deliver/Pizza_Myasnaya.jpg",
-    "dish": "pizza"
+    "dish": "Пицца",
+    "category": 12
   },
   {
     "_id": "59875b4b09b74c312bfcfca8",
@@ -1007,7 +1117,8 @@
     "gramm": 500,
     "ingredient": "Морской коктейль, лосось, помидоры, болгарский перец, сыр моцарелла",
     "img": "../img/deliver/Pizza_Moreprodukti.jpg",
-    "dish": "pizza"
+    "dish": "Пицца",
+    "category": 12
   },
   {
     "_id": "59875b4b64547897f8666584",
@@ -1016,7 +1127,8 @@
     "gramm": 550,
     "ingredient": "Курица, сыр моцарелла, сыр пармезан, айсберг, соус цезарь, сливки, помидоры",
     "img": "../img/deliver/Pizza_Ceasar.jpg",
-    "dish": "pizza"
+    "dish": "Пицца",
+    "category": 12
   },
   {
     "_id": "59875b4b5834e89a8732535b",
@@ -1025,7 +1137,8 @@
     "gramm": 480,
     "ingredient": "Ветчина, шампиньоны, сыр моцарелла",
     "img": "../img/deliver/Pizza_Vetchina_Gribi.jpg",
-    "dish": "pizza"
+    "dish": "Пицца",
+    "category": 12
   },
   {
     "_id": "59875b4b99ef577cdd3ed449",
@@ -1034,7 +1147,8 @@
     "gramm": 330,
     "ingredient": "Томатный соус, сыр моцарелла",
     "img": "../img/deliver/Pizza_Vetchina_Gribi.jpg",
-    "dish": "pizza"
+    "dish": "Пицца",
+    "category": 12
   },
   {
     "_id": "59875b4bf5f708d969b8c8d7",
@@ -1043,7 +1157,8 @@
     "gramm": 330,
     "ingredient": "Томатный соус, сыр моцарелла",
     "img": "../img/deliver/Pizza_Margarita.jpg",
-    "dish": "pizza"
+    "dish": "Пицца",
+    "category": 12
   },
   {
     "_id": "59875b4bd68c1633b47c8c86",
@@ -1052,7 +1167,8 @@
     "gramm": 420,
     "ingredient": "Сыр моцарелла, пармезан, дор блю, гауда, сливки",
     "img": "../img/deliver/Pizza_4cheese.jpg",
-    "dish": "pizza"
+    "dish": "Пицца",
+    "category": 12
   },
   {
     "_id": "59875b4baeac4d2d9ff6c1ac",
@@ -1061,6 +1177,7 @@
     "gramm": 460,
     "ingredient": "Помидоры, болгарский перец, брокколи, шампиньоны, лук красный",
     "img": "../img/deliver/Pizza_Ovoshnaya.jpg",
-    "dish": "pizza"
+    "dish": "Пицца",
+    "category": 12
   }
 ]
