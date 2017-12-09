@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import Increment from './Inсrement'
 import Decrement from './Decrement'
+import collection from 'lodash/collection'
 
 class Button extends React.Component{
 	toBasket = (id) =>{
@@ -46,6 +47,7 @@ class Button extends React.Component{
 class Dish extends React.Component{
 	toBasket = (id) =>{
 		this.props.toBasket(id)
+
 	}
 	decrement = (id) =>{
 		this.props.decrement(id)
@@ -54,7 +56,13 @@ class Dish extends React.Component{
 		this.props.increment(id)
 	}
 	render(){
-		const currentDishes = this.props.items.map((dish,key)=>{
+		var filter;
+		(!this.props.id == "") ? 
+			filter = collection.filter(this.props.items, {'category': this.props.id})
+			 :
+			filter = this.props.items 
+
+		const currentDishes = filter.map((dish,key)=>{
 			return(
 				<div className={(dish.quantity) ? "active item" : "item"} key={dish._id} itemScope itemType="http://schema.org/Restaurant">
 					<div className="foto_dish"><img src={dish.img} alt="{name}" itemProp="photo" itemProp="hasMenu"/></div>

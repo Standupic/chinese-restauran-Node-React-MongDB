@@ -5,6 +5,7 @@ import Dish from './Dish'
 class Menu extends React.Component{
 	takedish = (id) =>{
 		return () => {
+			// id
 			this.props.takeDish(id)
 		}
 	}
@@ -53,8 +54,9 @@ class Menu extends React.Component{
 						{dishB}
 					</ul>
 				</div>
-					<Dish items={(this.props.currentDish.length == 0) ? this.props.dishes : this.props.currentDish} 
-						  toBasket={this.toBasket} 
+					<Dish items={this.props.dishes}
+						  id={this.props.id}
+						  toBasket={this.toBasket}
 						  decrement={this.decrement}
 						  increment={this.increment}/>
 			</div>

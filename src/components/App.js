@@ -9,36 +9,56 @@ import array from 'lodash/array'
 
 class App extends React.Component{
 	state = {
-		dishes: [],
-		currentDish: [],
+		dishes: this.props.initialContests,
 		basket: [],
-		category: [],
-		total: 0
+		category: this.props.category,
+		total: 0,
+		id: ""
 	}
 	componentDidMount = () =>{
-		axios.get('/api/dishes')
-			.then(res => {
-				this.setState({
-					dishes: res.data.dishes,
-					category: array.uniqBy(res.data.dishes, 'category')
+		// axios.get('/api/dishes')
+		// 	.then(res => {
+		// 		this.setState({
+		// 			dishes: res.data.dishes,
+		// 			category: array.uniqBy(res.data.dishes, 'category')
 
-				})
-			})
-			.catch(console.error)		
+		// 		})
+		// 	})
+		// 	.catch(console.error)		
+	}
+	helperIncrement = (array,id) =>{
+		var result = array.map((dish)=>{
+			if(dish._id == id){
+					return Object.assign({},dish,{quantity: dish.quantity + 1})
+				}else{
+					return dish
+			}
+		})
+		return result
+	}
+	helperDecrement = (array,id) =>{
+		var result = array.map((dish)=>{
+			if(dish._id == id){
+					return Object.assign({},dish,{quantity: dish.quantity - 1})
+				}else{
+					return dish
+			}
+		})
+		return result
 	}
 	takeDish = (id) =>{
 		this.setState({
-	 		currentDish: collection.filter(this.state.dishes, {'category': id})
+	 		id: id
 		})
 	}
 	takeAllDish = () =>{
 		this.setState({
-			currentDish: []
+			id: ""
 		})
 	}
 	crash = (id) =>{
 		this.setState({
-			basket: this.state.basket.filter(d => d._id !== id)
+			basket : this.state.basket.filter(d => d._id !== id)
 		})
 	}
 	crashFromBasket = (id) => {
@@ -73,30 +93,12 @@ class App extends React.Component{
 		if(this.state.basket[index].quantity == 1){
 			this.crash(id)
 			this.setState({
-				dishes: this.state.dishes.map((dish)=>{
-					if(dish._id == id){
-						return Object.assign({},dish,{quantity: dish.quantity - 1})
-					}else{
-						return dish
-					}
-				})
+				dishes: this.helperDecrement(this.state.dishes,id)
 			})
 		}else{
 			this.setState({
-				basket: this.state.basket.map((dish)=>{
-					if(dish._id == id){
-						return Object.assign({},dish,{quantity: dish.quantity - 1})
-					}else{
-						return dish
-					}
-				}),
-				dishes: this.state.dishes.map((dish)=>{
-					if(dish._id == id){
-						return Object.assign({},dish,{quantity: dish.quantity - 1})
-					}else{
-						return dish
-					}
-				})
+				basket: this.helperDecrement(this.state.basket,id),
+				dishes: this.helperDecrement(this.state.dishes,id),
 			})	
 		}
 		this.setState(prevState => {
@@ -112,21 +114,9 @@ class App extends React.Component{
 			}
 		})
 		this.setState({
-				basket: this.state.basket.map((dish)=>{
-					if(dish._id == id){
-						return Object.assign({},dish,{quantity: dish.quantity + 1})
-					}else{
-						return dish
-					}
-				}),
-				dishes: this.state.dishes.map((dish)=>{
-					if(dish._id == id){
-						return Object.assign({},dish,{quantity: dish.quantity + 1})
-					}else{
-						return dish
-					}
-				})
-			})	
+				basket: this.helperIncrement(this.state.basket,id),
+				dishes: this.helperIncrement(this.state.dishes,id),
+			})
 		this.setState(prevState => {
 			return{
 				total: prevState.total + this.state.dishes[index]['price']
@@ -134,12 +124,13 @@ class App extends React.Component{
 		})
 	}
 	toBasket = (id) =>{
-		const index = array.findIndex(this.state.dishes, function(o){
-			if(o._id == id){
-				o.quantity = 1
-				return o
-			}
-		})
+			const index = array.findIndex(this.state.dishes, function(o){
+				if(o._id == id){
+					o.quantity = 1
+					return o
+				}
+			})
+
 			this.setState(prevState => {
 				return{
 					basket: prevState.basket.concat(this.state.dishes[index]),
@@ -149,13 +140,13 @@ class App extends React.Component{
 			})
 		}
 		
-	render(){ 
+	render(){
 		const dish = this.state.dishes.filter(t=> t)
 		return(
 			<div>
 				<Menu dishes={this.state.dishes}
+					  id={this.state.id}
 					  category={this.state.category} 
-					  currentDish={this.state.currentDish}
 					  takeDish={this.takeDish}
 					  takeAllDish={this.takeAllDish}
 					  toBasket={this.toBasket} 

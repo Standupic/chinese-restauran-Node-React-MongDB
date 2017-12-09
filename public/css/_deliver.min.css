@@ -45,7 +45,7 @@ button {
     font-family: RobotoMedium;
     src: url(../fonts/RobotoMedium/RobotoMedium.ttf);
     src: url(../fonts/RobotoMedium/RobotoMedium.eot);
-    src: url(../fonts/RobotoMedium/RobotoMedium.woffba
+    src: url(../fonts/RobotoMedium/RobotoMedium.woff)
 }
 
 @font-face {
@@ -73,10 +73,10 @@ html {
     margin-top: 10px
 }
 
-.menu_open {
+/*.menu_open {
     position: fixed;
     top: 0
-}
+}*/
 
 footer,
 section {
@@ -389,7 +389,7 @@ button {
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
-    align-items: center
+    align-items: center;
 }
 
 .overlay .body_overlay header img {
