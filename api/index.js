@@ -7,7 +7,7 @@ import config from '../config';
 
 let mdb;
 
-let url = "mongodb://localhost:27017/china"
+let url = "mongodb://http://188.225.25.82:8080/china"
 
 MongoClient.connect(url, function(err,db){
 	assert.equal(null, err)
