@@ -11,7 +11,7 @@ var MongoStore = require('connect-mongo')(session);
 const server = express(); 
 
 // DB
-mongoose.connect("mongodb://localhost:27017/china");
+mongoose.connect("mongodb://localhost:27017/china",{useMongoClient: true});
 var db = mongoose.connection;
 
 server.use(session({ // option session
