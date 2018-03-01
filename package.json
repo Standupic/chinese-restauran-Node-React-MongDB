@@ -16,7 +16,7 @@
     "express-session": "^1.15.6",
     "lodash": "^4.17.4",
     "mongodb": "^2.2.33",
-    "mongoose": "^4.13.9",
+    "mongoose": "^4.10.8",
     "react": "^16.0.0",
     "connect-mongo":"^2.0.1",
     "react-addons-css-transition-group": "^15.6.2",
