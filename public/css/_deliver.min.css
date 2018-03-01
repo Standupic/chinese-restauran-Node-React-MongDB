@@ -78,6 +78,7 @@ html {
     top: 0
 }*/
 
+
 footer,
 section {
     width: 100%
@@ -85,7 +86,7 @@ section {
 
 footer .container,
 section .container {
-    max-width: 1150px;
+    max-width: 1250px;
     padding: 0 25px !important;
     width: 100%;
     margin: 0 auto
@@ -342,8 +343,10 @@ button {
 }
 
 .overlay .body_overlay,
-.popover .box {
-    -webkit-transition: -webkit-transform .7s
+#popover #box {
+    -webkit-transition: -webkit-transform .7s;
+    transition: transform .7s;
+
 }
 
 .overlay .burger span {
@@ -496,7 +499,7 @@ button {
 
 .header .wrap_menu .menu .list_menu ul li {
     float: left;
-    margin-left: 35px;
+    margin-left: 30px;
     color: #f1f1f1
 }
 
@@ -801,7 +804,7 @@ button {
 }
 
 .basket,
-.popover {
+#popover {
     visibility: visible;
     opacity: 1
 }
@@ -1047,7 +1050,7 @@ button {
 }
 
 .basket .wrap_list .item ul .quanti,
-.popover {
+#popover {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox
@@ -1099,7 +1102,7 @@ button {
     }
 }
 
-.popover {
+#popover {
     position: fixed;
     background-color: rgba(0, 0, 0, .6);
     width: 100%;
@@ -1108,6 +1111,8 @@ button {
     left: 0;
     z-index: 100;
     display: flex;
+    opacity: 0;
+    visibility: hidden;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -1116,71 +1121,91 @@ button {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-transition: visibility 0s, opacity .6s;
-    transition: visibility 0s, opacity .6s
+    -webkit-transition: visibility 0s, opacity .2s;
+    transition: visibility 0s, opacity .2s
 }
 
-.popover .box form,
-.popover .box form .top_input {
+#popover.slideIn{
+    visibility: visible;
+    opacity: 1;
+}
+#popover.slideOut{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#popover #box form,
+#popover #box form .top_input {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox
 }
 
-.popover .box {
+#box{
     width: 950px;
     background-color: #fff;
     text-align: center;
     padding: 15px;
     position: relative;
-    -webkit-transform: translateY(-200%);
-    -ms-transform: translateY(-200%);
-    transform: translateY(-200%);
-    transition: transform .7s;
-    -webkit-transition-delay: .5;
-    transition-delay: .5
+    -webkit-transform: translateY(-220%);
+    -ms-transform: translateY(-220%);
+    transform: translateY(-220%);
+    transition: transform .7s ease-in 1s;
+    /*-webkit-transition-delay: .5s;*/
+    /*transition-delay: .5s*/
+}
+#box.slideIn{
+    transform: translateY(0);
+}
+
+#box.slideOut{
+    transform: translateY(-220%);
 }
 
 @media all and (max-width:960px) {
-    .popover .box {
+    #popover #box {
         width: 80%;
         padding: 15px
     }
 }
 
-.popover .box .out {
+#popover #box .out {
     position: absolute;
     font-size: 3em;
     right: 15px;
     top: 0
 }
 
-.popover .box h3 {
+#popover #box .out:hover{
+    cursor: pointer;
+}
+
+#popover #box h3 {
     margin: 30px 0;
     font-size: 2em
 }
 
 @media all and (max-width:717px) {
-    .popover .box h3 {
+    #popover #box h3 {
         font-size: 1.2em;
         margin: 30px 0
     }
 }
 
 @media all and (max-width:400px) {
-    .popover .box {
+    #popover #box {
         width: 95%
     }
-    .popover .box .out {
+    #popover #box .out {
         right: 0;
         top: -20px
     }
-    .popover .box h3 {
+    #popover #box h3 {
         margin: 15px 0
     }
 }
 
-.popover .box form {
+#popover #box form {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1192,7 +1217,7 @@ button {
     align-self: center
 }
 
-.popover .box form input {
+#popover #box form input {
     height: 40px;
     border: 1px solid #d8d8d8;
     padding-left: 15px;
@@ -1201,7 +1226,7 @@ button {
 }
 
 @media all and (max-width:717px) {
-    .popover .box form input {
+    #popover #box form input {
         font-size: .9em;
         padding-left: 5px;
         margin: 0 0 7px
@@ -1209,22 +1234,22 @@ button {
 }
 
 @media all and (max-width:460px) {
-    .popover .box form input {
+    #popover #box form input {
         font-size: .8em
     }
 }
 
 @media all and (max-width:400px) {
-    .popover .box form input {
+    #popover #box form input {
         font-size: .7em
     }
 }
 
-.popover .box form .err {
+#popover #box form .err {
     border: 1px solid red
 }
 
-.popover .box form .top_input {
+#popover #box form .top_input {
     display: flex;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -1232,27 +1257,27 @@ button {
     justify-content: space-between
 }
 
-.popover .box form .adress,
+#popover #box form .adress,
 footer .wrap_footer .wrap_content {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox
 }
 
-.popover .box form .top_input input {
+#popover #box form .top_input input {
     width: 452px;
     margin-right: 10px
 }
 
-.popover .box form .top_input input:last-child {
+#popover #box form .top_input input:last-child {
     margin-right: 0
 }
 
-.popover .box form .street input {
+#popover #box form .street input {
     width: 100%
 }
 
-.popover .box form .adress {
+#popover #box form .adress {
     display: flex;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -1260,24 +1285,24 @@ footer .wrap_footer .wrap_content {
     justify-content: space-between
 }
 
-.popover .box form .adress input {
+#popover #box form .adress input {
     margin-right: 15px
 }
 
-.popover .box form .adress input:last-child {
+#popover #box form .adress input:last-child {
     margin-right: 0
 }
 
 @media all and (max-width:717px) {
-    .popover .box form .top_input input {
+    #popover #box form .top_input input {
         width: 100%
     }
-    .popover .box form .adress input {
+    #popover #box form .adress input {
         width: 50%
     }
 }
 
-.popover .box form .description textarea {
+#popover #box form .description textarea {
     width: 100%;
     color: #000;
     padding-left: 15px;
@@ -1285,23 +1310,23 @@ footer .wrap_footer .wrap_content {
 }
 
 @media all and (max-width:460px) {
-    .popover .box form .description textarea {
+    #popover #box form .description textarea {
         font-size: .8em
     }
 }
 
 @media all and (max-width:717px) {
-    .popover .box form .description textarea {
+    #popover #box form .description textarea {
         padding-left: 5px
     }
 }
 
-.popover .box form button {
+#popover #box form button {
     margin-top: 25px
 }
 
 @media all and (max-width:400px) {
-    .popover .box form button {
+    #popover #box form button {
         margin-top: 5px;
         height: 45px
     }
@@ -1309,7 +1334,8 @@ footer .wrap_footer .wrap_content {
 
 .visible {
     opacity: 1!important;
-    visibility: visible!important
+    visibility: visible!important;
+    transition: transform .7s;
 }
 
 .hidden {
@@ -1331,7 +1357,7 @@ footer .wrap_footer .wrap_content {
     -ms-transform: translateY(0)!important;
     transform: translateY(0)!important;
     -webkit-transition: -webkit-transform .7s;
-    transition: transform .7s
+    transition: transform .7s;
 }
 
 .close_list {

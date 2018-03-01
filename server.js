@@ -2,11 +2,41 @@ import config from "./config";
 import path from "path";
 import express from "express";
 import apiRouter from './api';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import session  from 'express-session';
 
-const server = express();
+var MongoStore = require('connect-mongo')(session);
+
+const server = express(); 
+
+// DB
+mongoose.connect("mongodb://localhost:27017/china");
+var db = mongoose.connection;
+
+server.use(session({ // option session
+  secret: "treehouse loves you",
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
+}));
+
+server.use(function(req, res, next){
+	res.locals.currentUser = req.session.userId;
+	next()
+})
+
+db.on('error', console.error.bind(console, 'connection error:'));
+
 
 server.use(express.static(__dirname + '/public'))
+
 server.use('/api', apiRouter);
+
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: false }));
 
 var handlebars = require("express-handlebars").create(
 	{
@@ -28,27 +58,28 @@ server.set('views', path.join(__dirname, 'views'));
 server.set('view engine', 'hbs')
 
 
-import serverRender from './serverRender';
+// import serverRender from './serverRender';
 
+var routes = require('./routes/index');
 
-server.get("/",(req,res)=>{
-	res.render('main', { 
-				js:['js/libs.js','https://api-maps.yandex.ru/2.1/?lang=ru_RU'], 
-				css:['_main.min.css','owl.carousel_min.css']
-				})
-})
+server.use('/',routes); 
 
-server.get('/deliver',(req,res)=>{
-	serverRender()
-		.then(content =>{
-			res.render('deliver',{
-				content: content,
-				js: ['js/react.js'],
-				css: ['_deliver.min.css']
-			})
-		})
-		.catch(console.error)
-})
+server.use(function(err,req,res,next){ // обработчик ошибок
+	res.status(err.status || 500);
+
+	var obj = {
+		message:err.message,
+		error:{},
+		css:['_main.min.css']
+	}
+
+	if(err.name === 'login'){
+		obj.login = true;
+	}
+	
+	res.render('error',obj);
+});
+
 server.listen(config.port,config.host,()=>{
 	console.log("express listening on port", config.port)
-})
+});

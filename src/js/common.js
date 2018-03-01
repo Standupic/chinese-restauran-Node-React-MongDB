@@ -9,6 +9,7 @@ var scrollingAPI = require("../js/ScrollingAPI.js");
  $(document).ready(function(){
     
     $('#phone').mask('+7'+'(999) 999-9999');
+
     function checkMQ(){
 		return window.getComputedStyle(document.querySelector(".wrap"), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
 	}
@@ -27,19 +28,44 @@ var scrollingAPI = require("../js/ScrollingAPI.js");
 
 	burger.on("click",function(){
         scrollingAPI.disableScroll();
-        overlay.addClass("menu_is_open")
-        // overlay_body.addClass("menu_is_open")
+
+        overlay.css({
+            width: "100%",
+            height: "100%",
+            position: "fixed",
+            top: $(document).scrollTop(),
+            left: "0",
+            width: "100%",
+            height: "100%",
+            // top: $(document).scrollTop(),
+        })
+        $header.css({
+            top: $(document).scrollTop()
+        })
+        // addClass("menu_is_open")
+        overlay_body.css({
+            position: "relative",
+            top: "0",
+            display: "block",
+            transform: "translateX(0)",
+            height: "100%"
+        })
+        // addClass("menu_is_open")
         $(this).css("display","none")
 	})
 
     burger_sidebar.on("click", function(){
         scrollingAPI.enableScroll();
         overlay.removeClass("menu_is_open")
-        // overlay_body.removeClass("menu_is_open")
+        overlay_body.removeClass("menu_is_open")
         burger.css("display","block")
         
     })
 
+    $window.on("scroll",function(){
+        console.log($(document).scrollTop())
+    })
+    // console.log($(document).scrollTop())
 
     function fixedMenu(){
         if ($(this).scrollTop() <= h && $header.hasClass("fixed")) {

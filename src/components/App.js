@@ -1,8 +1,9 @@
-import React from 'react';
+import React from 'react'
 import ReactDom from 'react-dom'
 import axios from 'axios'
 import Menu from './Menu'
 import Basket from './Basket'
+import Form from './Form'
 import collection from 'lodash/collection'
 import array from 'lodash/array'
 
@@ -13,19 +14,25 @@ class App extends React.Component{
 		basket: [],
 		category: this.props.category,
 		total: 0,
+		form: false,
 		id: ""
 	}
 	componentDidMount = () =>{
-		// axios.get('/api/dishes')
-		// 	.then(res => {
-		// 		this.setState({
-		// 			dishes: res.data.dishes,
-		// 			category: array.uniqBy(res.data.dishes, 'category')
+		if(sessionStorage.getItem('basket')){
+			var basket = JSON.parse(sessionStorage.getItem('basket'))
+			var total = 0;
+			for(let i = 0; i < basket.length; i++){
+				total += basket[i]['price'] * basket[i]['quantity']
+			}
+			this.setState({
+				basket : JSON.parse(sessionStorage.getItem('basket')),
+				total: total,
+				dishes: JSON.parse(sessionStorage.getItem('dishes'))
 
-		// 		})
-		// 	})
-		// 	.catch(console.error)		
+			})
+		}		
 	}
+
 	helperIncrement = (array,id) =>{
 		var result = array.map((dish)=>{
 			if(dish._id == id){
@@ -34,9 +41,13 @@ class App extends React.Component{
 					return dish
 			}
 		})
+		var product = this.state.dishes.filter(d => d.quantity > 0);
+		sessionStorage.setItem("basket", JSON.stringify(product));
+		sessionStorage.setItem("dishes", JSON.stringify(result));
 		return result
 	}
-	helperDecrement = (array,id) =>{
+
+	helperDecrement = (array,id,string) =>{
 		var result = array.map((dish)=>{
 			if(dish._id == id){
 					return Object.assign({},dish,{quantity: dish.quantity - 1})
@@ -44,23 +55,31 @@ class App extends React.Component{
 					return dish
 			}
 		})
+		var product = this.state.dishes.filter(d => d.quantity > 0);
+		sessionStorage.setItem("basket", JSON.stringify(product));
+		sessionStorage.setItem("dishes", JSON.stringify(result));
 		return result
 	}
+
 	takeDish = (id) =>{
 		this.setState({
 	 		id: id
 		})
 	}
+
 	takeAllDish = () =>{
 		this.setState({
 			id: ""
 		})
 	}
+
 	crash = (id) =>{
 		this.setState({
 			basket : this.state.basket.filter(d => d._id !== id)
 		})
+		sessionStorage.setItem("basket", JSON.stringify(this.state.basket.filter(d => d._id !== id)))
 	}
+
 	crashFromBasket = (id) => {
 		const index = array.findIndex(this.state.dishes, function(o){
 			if(o._id == id){
@@ -77,8 +96,17 @@ class App extends React.Component{
 			}),
 			total: this.state.total - (this.state.dishes[index]['quantity'] * this.state.dishes[index]['price'])
 		})
+		var dishes = this.state.dishes.map((dish)=>{
+				if(dish._id == id){
+					return Object.assign({},dish,{quantity: 0})
+				}else{
+					return dish
+				}
+			})
 		this.crash(id)
+		sessionStorage.setItem("dishes", JSON.stringify(dishes))
 	}
+
 	decrement = (id) =>{
 		const index = array.findIndex(this.state.basket, function(o){
 			if(o._id == id){
@@ -97,7 +125,7 @@ class App extends React.Component{
 			})
 		}else{
 			this.setState({
-				basket: this.helperDecrement(this.state.basket,id),
+				basket: this.helperDecrement(this.state.basket,id,"basket"),
 				dishes: this.helperDecrement(this.state.dishes,id),
 			})	
 		}
@@ -106,7 +134,9 @@ class App extends React.Component{
 				total: prevState.total - this.state.dishes[indexD]['price']
 			}
 		})
+		sessionStorage.setItem("basket", JSON.stringify(this.state.basket.filter(d => d._id !== id)))
 	}
+
 	increment = (id) =>{
 		const index = array.findIndex(this.state.dishes, function(o){
 			if(o._id == id){
@@ -123,6 +153,7 @@ class App extends React.Component{
 			}
 		})
 	}
+
 	toBasket = (id) =>{
 			const index = array.findIndex(this.state.dishes, function(o){
 				if(o._id == id){
@@ -130,16 +161,30 @@ class App extends React.Component{
 					return o
 				}
 			})
-
-			this.setState(prevState => {
-				return{
-					basket: prevState.basket.concat(this.state.dishes[index]),
+			this.setState({
+					basket: this.state.basket.concat(this.state.dishes[index]),
 					dishes: this.state.dishes,
-					total:  prevState.total + this.state.dishes[index]['price']
-				}
+					total:  this.state.total + this.state.dishes[index]['price']
 			})
-		}
-		
+
+			var product = this.state.dishes.filter(d => d.quantity > 0);
+			var total = 0;
+			for(var i = 0; i < product.length; i++){
+				total += product[i]['price']
+			}
+			sessionStorage.setItem("basket", JSON.stringify(product));
+			sessionStorage.setItem("total", total)
+			sessionStorage.setItem("dishes", JSON.stringify(this.state.dishes))
+			
+	}
+	form = ()=>{
+		this.setState(prev => ({form: !prev.form}))
+	}
+	closeForm = () =>{
+		this.setState({
+			form: false
+		})
+	}
 	render(){
 		const dish = this.state.dishes.filter(t=> t)
 		return(
@@ -158,7 +203,13 @@ class App extends React.Component{
 														  total={this.state.total}
 														  increment={this.increment}
 														  decrement={this.decrement}
+														  form={this.form}
 														  crashFromBasket={this.crashFromBasket}/> : null}
+
+				{(this.state.form) ? <Form form={this.state.form}
+										   close={this.closeForm}
+										   basket={this.state.basket}/> : null}										  
+				
 			</div>
 		)
 	}

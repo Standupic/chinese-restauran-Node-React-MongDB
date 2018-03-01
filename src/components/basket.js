@@ -23,7 +23,13 @@ class Basket extends React.Component{
 			show: !this.state.show
 		})
 	}
-
+	send = ()=>{
+		this.props.form()
+	}
+	transform = ()=>{
+		var a = 50 * this.props.product.length
+		return `translateY(${a})px`
+	}
 	render(){
 		const product = this.props.product.map((dish,key)=>{
 			return(
@@ -57,7 +63,7 @@ class Basket extends React.Component{
 						</div>
 						<div className="item">
 							<span className="total">{this.props.total}</span><em>₽</em>
-							<button className="send_order">Оформить заказ</button>
+							<button className="send_order" onClick={this.send}>Оформить заказ</button>
 						</div>
 					</div>
 					<div className="wrap_list" id="list">

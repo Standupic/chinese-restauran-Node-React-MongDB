@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="menu">
 					<div class="logo" itemscope itemtype="http://schema.org/Restaurant">
-						<a href="index.html"><img src="../img/logo_text.svg" alt="Рестора Великая стена" itemprop="logo" itemprop="photo"></a>
+						<a href="/"><img src="../img/logo_text.svg" alt="Рестора Великая стена" itemprop="logo" itemprop="photo"></a>
 					</div>
 					<div class="list_menu">
 						<ul>
@@ -13,6 +13,15 @@
 							<li><a href="http://www.chinarestro.ru" itemscope itemtype="http://schema.org/Restaurant">Резерв</a></li>
 							<li><a href="http://www.chinarestro.ru" itemscope itemtype="http://schema.org/Restaurant">Отзывы</a></li>
 							<li><a href="#" data-go="#contact" class="go_to">Контакты</a></li>
+							<li><a href="/profile">Личный кабинет</a></li>
+							{{#if currentUser}}
+								<li><a href="/logout">Выход</a>
+							{{else}}
+								<li><a href="/login">Вход</a>
+								<li><a href="/registration">Регистрация</a></li>
+							{{/if}}
+							
+							
 						</ul>
 					</div>
 					<div class="tel" itemscope itemtype="http://schema.org/Restaurant">
@@ -67,4 +76,3 @@
 			</div>
 		</div>
 	</section>
-<div class="wrap" style="background: #eeeeee">
