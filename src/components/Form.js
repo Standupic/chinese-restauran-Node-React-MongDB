@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import $ from 'jquery'
 import InputMask from 'react-input-mask'
 import axios from 'axios'
+import transport from '../js/nodeMailer'
 
 
 class Form extends React.Component{
@@ -37,12 +38,28 @@ class Form extends React.Component{
   			area: evt.target.area.value,
   			basket: this.props.basket
   		}
-  	axios.post("/deliver",{
-  		content: data
-  	})
+  		var options = {
+  			from: "Vladimir",
+  			to: "formyphp@mail.ru",
+  			subject: "fucking you",
+  			text: `${data.name},${data.phone}`
+  		} 
+  		transport.sendMail(options,(error, info)=>{
+  			if(error){
+  				console.log(error)
+  			}
+  			console.log("The message was sent")
+  			console.log(info);
+  		})
+  		
+  	// axios.post("/deliver",{
+  	// 	content: data
+  	// })
+
   	this.props.close()
   	sessionStorage.clear()
   	console.log(sessionStorage)
+  	// console.log(data)
   		 // $.ajax({
      //        url: "/orderData.php",
      //        type: "POST",

@@ -13,7 +13,7 @@ const server = express();
 // DB server
 // mongodb://localhost:27017/china 
 
-mongoose.connect("mongodb://localhost/china",{
+mongoose.connect("mongodb://localhost:27017/china",{
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE,
   useMongoClient: true
