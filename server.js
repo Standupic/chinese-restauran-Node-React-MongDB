@@ -10,8 +10,9 @@ var MongoStore = require('connect-mongo')(session);
 
 const server = express(); 
 
-// DB
-// mongodb://localhost:27017/china
+// DB server
+// mongodb://localhost:27017/china 
+
 mongoose.connect("mongodb://localhost/china",{
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE,

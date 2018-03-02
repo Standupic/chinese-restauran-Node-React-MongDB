@@ -125,7 +125,7 @@ class App extends React.Component{
 			})
 		}else{
 			this.setState({
-				basket: this.helperDecrement(this.state.basket,id,"basket"),
+				basket: this.helperDecrement(this.state.basket,id),
 				dishes: this.helperDecrement(this.state.dishes,id),
 			})	
 		}
