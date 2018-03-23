@@ -4,7 +4,7 @@ import ReactDom from 'react-dom'
 import $ from 'jquery'
 import InputMask from 'react-input-mask'
 import axios from 'axios'
-// import transport from '../js/nodeMailer'
+import transport from '../js/nodeMailer'
 
 
 class Form extends React.Component{
