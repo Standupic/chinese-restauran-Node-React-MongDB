@@ -4,7 +4,7 @@ import ReactDom from 'react-dom'
 import $ from 'jquery'
 import InputMask from 'react-input-mask'
 import axios from 'axios'
-import transport from '../js/nodeMailer'
+// import transport from '../js/nodeMailer'
 
 
 class Form extends React.Component{
@@ -39,8 +39,8 @@ class Form extends React.Component{
   			basket: this.props.basket
   		}
   		var options = {
-  			from: "Vladimir",
-  			to: "formyphp@mail.ru",
+  			from: 'satndupic87@gmail.com',
+  			to: 'formyphp@mail.com',
   			subject: "fucking you",
   			text: `${data.name},${data.phone}`
   		} 
@@ -51,7 +51,7 @@ class Form extends React.Component{
   			console.log("The message was sent")
   			console.log(info);
   		})
-  		
+
   	// axios.post("/deliver",{
   	// 	content: data
   	// })
