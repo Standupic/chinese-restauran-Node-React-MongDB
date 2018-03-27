@@ -1,6 +1,6 @@
 import nodeMailer from "nodemailer"
 
-let transporter = nodeMailer.createTransport("SMTP",{
+let transporter = nodeMailer.createTransport({
 	service: 'gmail',
 	secure: false,
 	port: 25,
