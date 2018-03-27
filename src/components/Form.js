@@ -4,7 +4,8 @@ import ReactDom from 'react-dom'
 import $ from 'jquery'
 import InputMask from 'react-input-mask'
 import axios from 'axios'
-import transport from '../js/nodeMailer'
+// import transport from '../js/nodeMailer'
+import nodeMailer from "nodemailer"
 
 
 class Form extends React.Component{
@@ -39,7 +40,7 @@ class Form extends React.Component{
 				rejectUnauthorized: false
 			}
 		});
-		
+
   		var data = {
   			name: evt.target.name.value,
   			phone: evt.target.phone.value,
