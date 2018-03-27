@@ -11,10 +11,6 @@ module.exports = {
     filename: '[name].js'
   },
   module: {
-    node: {
-      fs: "empty"
-    },
-    target: 'node',
     loaders: [
       {
         test: /\.json$/,

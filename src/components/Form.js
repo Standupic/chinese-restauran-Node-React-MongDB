@@ -27,6 +27,19 @@ class Form extends React.Component{
   	onFormSubmit = (evt)=>{
   		evt.preventDefault();
 
+  		let transporter = nodeMailer.createTransport({
+			service: 'gmail',
+			secure: false,
+			port: 25,
+			auth: {
+				user: "satndupic87@gmail.com",
+				pass: "5827ifyz"
+			},
+			tls: {
+				rejectUnauthorized: false
+			}
+		});
+		
   		var data = {
   			name: evt.target.name.value,
   			phone: evt.target.phone.value,
@@ -44,7 +57,7 @@ class Form extends React.Component{
   			subject: "fucking you",
   			text: `${data.name},${data.phone}`
   		} 
-  		transport.sendMail(options,(error, info)=>{
+  		transporter.sendMail(options,(error, info)=>{
   			if(error){
   				console.log(error)
   			}
