@@ -5,7 +5,7 @@ import $ from 'jquery'
 import InputMask from 'react-input-mask'
 import axios from 'axios'
 // import transport from '../js/nodeMailer'
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 
 
 class Form extends React.Component{

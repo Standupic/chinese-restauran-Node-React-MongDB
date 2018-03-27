@@ -5,6 +5,7 @@ import apiRouter from './api';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import session  from 'express-session';
+const nodemailer = require('nodemailer');
 
 var MongoStore = require('connect-mongo')(session);
 
