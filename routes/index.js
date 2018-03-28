@@ -165,7 +165,7 @@ router.post("/deliver",(req,res,next) =>{
 
 	if(!req.session.userId){
 
-		options.text = `${req.name},${req.phone}`;
+		options.text = `${req.body.content.name},${req.body.content.phone}`;
 
 		transporter.sendMail(options,(error, info)=>{
 		if(error){
@@ -179,7 +179,7 @@ router.post("/deliver",(req,res,next) =>{
 
 
 	}
-	// console.log(req.body)
+	console.log(req.body)
 	// console.log("helO!")
 	// res.redirect("http://localhost:8080/")
 	// return res.redirect("/")
