@@ -5,7 +5,7 @@ import $ from 'jquery'
 import InputMask from 'react-input-mask'
 import axios from 'axios'
 // import transport from '../js/nodeMailer'
-// const nodemailer = require('nodemailer');
+
 
 
 class Form extends React.Component{
@@ -28,18 +28,18 @@ class Form extends React.Component{
   	onFormSubmit = (evt)=>{
   		evt.preventDefault();
 
-  		let transporter = nodeMailer.createTransport({
-			service: 'gmail',
-			secure: false,
-			port: 25,
-			auth: {
-				user: "satndupic87@gmail.com",
-				pass: "5827ifyz"
-			},
-			tls: {
-				rejectUnauthorized: false
-			}
-		});
+  // 		let transporter = nodeMailer.createTransport({
+		// 	service: 'gmail',
+		// 	secure: false,
+		// 	port: 25,
+		// 	auth: {
+		// 		user: "satndupic87@gmail.com",
+		// 		pass: "5827ifyz"
+		// 	},
+		// 	tls: {
+		// 		rejectUnauthorized: false
+		// 	}
+		// });
 
   		var data = {
   			name: evt.target.name.value,
@@ -52,36 +52,43 @@ class Form extends React.Component{
   			area: evt.target.area.value,
   			basket: this.props.basket
   		}
-  		var options = {
-  			from: 'satndupic87@gmail.com',
-  			to: 'frontendmasterru@gmail.com',
-  			subject: "fucking you",
-  			text: `${data.name},${data.phone}`
-  		} 
-  		transporter.sendMail(options,(error, info)=>{
-  			if(error){
-  				console.log(error)
-  			}
-  			console.log("The message was sent")
-  			console.log(info);
-  		})
+  		// var options = {
+  		// 	from: 'satndupic87@gmail.com',
+  		// 	to: 'frontendmasterru@gmail.com',
+  		// 	subject: "fucking you",
+  		// 	text: `${data.name},${data.phone}`
+  		// } 
+  		// transporter.sendMail(options,(error, info)=>{
+  		// 	if(error){
+  		// 		console.log(error)
+  		// 	}
+  		// 	console.log("The message was sent")
+  		// 	console.log(info);
+  		// })
 
-  	// axios.post("/deliver",{
-  	// 	content: data
-  	// })
+  	
 
   	this.props.close()
   	sessionStorage.clear()
-  	console.log(sessionStorage)
-  	// console.log(data)
+
+  	axios.post("/deliver",{
+  			  content: data
+  	}).then(res=>{
+  		console.log(res)
+  		if(res.status == 200){
+  			this.props.refresh()
+  		}
+  	})
+
   		 // $.ajax({
-     //        url: "/orderData.php",
+     //        url: "/deliver",
      //        type: "POST",
      //        data: data,
+     //        // data: JSON.stringify({data}),
      //        success: function(res){
-                // console.log(res)
-            // }
-         // })
+     //            window.location.href = "http://0.0.0.0:8080"
+     //        }
+     //     })
 
   		 // console.log(data)
 
@@ -94,7 +101,7 @@ class Form extends React.Component{
 							&times;
 						</div>
 						<h3>Оформление заказа</h3>
-						<form action="" method="POST" id="form" onSubmit={this.onFormSubmit}>
+						<form action="deliver" method="POST" id="form" onSubmit={this.onFormSubmit}>
 							<div className="top_input">
 								<input type="text" name="name" placeholder="Ваше имя" required/>
 								<InputMask name="phone" mask="+7 (999) 999-99-99" placeholder="Ваш телефон"/>
@@ -111,7 +118,7 @@ class Form extends React.Component{
 							<div className="description">
 								<textarea placeholder="Примечания к заказу" name="area" id="" cols="30" rows="5"></textarea>
 							</div>
-							<a href="/order"><button type="submit">Отправить</button></a>
+							<button type="submit">Отправить</button>
 						</form>	
 				</div>
 			</div>

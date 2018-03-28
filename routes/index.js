@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
+var nodeMailer = require("nodemailer")
+
 
 
 
@@ -115,7 +117,7 @@ router.post('/registration', (req,res,next)=>{
 		var userData = {
 			name: req.body.name,
 			email: req.body.email,
-			password: req.body.password
+			password: req.body.password,
 		}
 
 		User.create(userData, function(error, user){
@@ -138,7 +140,51 @@ router.post('/registration', (req,res,next)=>{
 //POST
 
 router.post("/deliver",(req,res,next) =>{
-	console.log(req.body)
+
+	res.send("Success")
+
+	let transporter = nodeMailer.createTransport({
+		service: 'gmail',
+		secure: false,
+		port: 25,
+		auth: {
+			user: "satndupic87@gmail.com",
+			pass: "5827ifyz"
+		},
+		tls: {
+			rejectUnauthorized: false
+		}
+	});
+
+	let options = {
+  			from: 'satndupic87@gmail.com',
+  			to: 'frontendmasterru@gmail.com',
+  			subject: "fucking you",
+  			// text: `${req.name},${data.phone}`
+  		}
+
+	if(!req.session.userId){
+
+		options.text = `${req.body.name},${req.body.phone}`;
+
+		transporter.sendMail(options,(error, info)=>{
+		if(error){
+			console.log(error)
+		}
+		console.log("The message was sent")
+		console.log(info);
+	})
+
+	}else{
+
+
+	}
+	// console.log(req.body)
+	// console.log("helO!")
+	// res.redirect("http://localhost:8080/")
+	// return res.redirect("/")
+	// console.log(sessionStorage)
+	// console.log(req.body)
 })
 
 module.exports = router;

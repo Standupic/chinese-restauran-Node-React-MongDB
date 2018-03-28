@@ -206,6 +206,21 @@ class App extends React.Component{
 	form = ()=>{
 		this.setState(prev => ({form: !prev.form}))
 	}
+	refresh = ()=>{
+		this.setState({
+			dishes: this.props.initialContests.map(function(dish){
+				if(dish.quantity){
+					delete dish.quantity
+				}
+				return dish
+			}),
+			basket: [],
+			category: this.props.category,
+			total: 0,
+			form: false,
+			id: ""
+		})
+	}
 	closeForm = () =>{
 		this.setState({
 			form: false
@@ -234,7 +249,9 @@ class App extends React.Component{
 
 				{(this.state.form) ? <Form form={this.state.form}
 										   close={this.closeForm}
-										   basket={this.state.basket}/> : null}										  
+										   basket={this.state.basket}
+										   refresh={this.refresh}
+										   /> : null}										  
 				
 			</div>
 		)

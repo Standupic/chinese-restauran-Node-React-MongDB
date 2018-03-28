@@ -8,6 +8,18 @@ var UserSchema = new mongoose.Schema({
 		required: true,
 		trim: true
 	},
+	address: {
+		type: String,
+		required: true
+	},
+	phone: {
+		type: Number,
+		required: true
+	},
+	port: {
+		type: Number,
+		required: true
+	},
 	email: {
 		type: String,
 		required: true,
