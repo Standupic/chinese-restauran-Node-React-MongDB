@@ -144,7 +144,7 @@ router.post("/deliver",(req,res,next) =>{
 	res.send("Success")
 
 	let transporter = nodeMailer.createTransport({
-		service: 'gmail',
+		host: 'smtp.gmail.com',
 		secure: false,
 		port: 25,
 		auth: {
@@ -157,7 +157,7 @@ router.post("/deliver",(req,res,next) =>{
 	});
 
 	let options = {
-  			from: 'satndupic87@gmail.com',
+  			from: '"China" satndupic87@gmail.com',
   			to: 'frontendmasterru@gmail.com',
   			subject: "fucking you",
   			// text: `${req.name},${data.phone}`
@@ -165,7 +165,7 @@ router.post("/deliver",(req,res,next) =>{
 
 	if(!req.session.userId){
 
-		options.text = `${req.body.name},${req.body.phone}`;
+		options.text = `${req.name},${req.phone}`;
 
 		transporter.sendMail(options,(error, info)=>{
 		if(error){
