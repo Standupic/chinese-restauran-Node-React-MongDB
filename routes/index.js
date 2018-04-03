@@ -149,7 +149,7 @@ router.post("/deliver",(req,res,next) =>{
 		port: 25,
 		auth: {
 			user: "satndupic87@gmail.com",
-			pass: "5827ifyq"
+			pass: "5827ifyz"
 		},
 		tls: {
 			rejectUnauthorized: false

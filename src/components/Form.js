@@ -77,6 +77,7 @@ class Form extends React.Component{
   		console.log(res)
   		if(res.status == 200){
   			this.props.refresh()
+  			
   		}
   	}).catch(error=>{
   		console.log(error)
