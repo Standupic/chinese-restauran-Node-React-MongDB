@@ -141,7 +141,7 @@ router.post('/registration', (req,res,next)=>{
 
 router.post("/deliver",(req,res,next) =>{
 
-	res.send("Success")
+	// res.send("Success")
 
 	let transporter = nodeMailer.createTransport({
 		host: 'smtp.gmail.com',
