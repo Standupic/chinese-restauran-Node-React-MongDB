@@ -73,13 +73,11 @@ class Form extends React.Component{
 
   	axios.post("/deliver",{
   			  content: data
-  	}).then(res => {
+  	}).then(res=>{
   		console.log(res)
   		if(res.status == 200){
   			this.props.refresh()
   		}
-  	}).catch(error => {
-  		alert("Что то пошло не так!")
   	})
 
   		 // $.ajax({

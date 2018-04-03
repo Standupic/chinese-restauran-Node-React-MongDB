@@ -1,6 +1,7 @@
 require("setimmediate");
-global.jQuery = require("jquery");
-var $ = require("jquery")
+// global.jQuery = require("jquery");
+window.$ = window.jQuery = require("jquery");
+// var $ = require("jquery")
 var mask = require("jquery-mask-plugin")
 require("../js/owl.carousel.min");
 var scrollingAPI = require("../js/ScrollingAPI.js");
