@@ -1,0 +1,40 @@
+<h4>Информация заказа</h4>
+<table style='border: 1px solid; text-align: center; border-collapse: collapse;'>
+  <tr>
+    <th style='border-right: 1px solid;'>Название</th>
+      <th>Количетсво</th>
+    </tr>
+        {{#each data.basket}}
+          <tr style='border: 1px solid;'>
+            <td style='border: 1px solid;'>{{data.basket.name}}</td>
+            <td style='border: 1px solid;'>{{data.basket.quantity}}</td>
+          </tr>
+        {{/each}}
+</table>
+<br/>
+<br/>
+<h4>Информация доставки</h4>"
+<table style='border: 1px solid; border-collapse: collapse; text-align: center'>
+  <tr style='border: 1px solid;'>
+  <th style='border-right: 1px solid;'>Имя</th>
+  <th style='border-right: 1px solid;'>Телефон</th>
+  <th style='border-right: 1px solid;'>Улица</th>
+  <th style='border-right: 1px solid;'>Дом</th>
+  <th style='border-right: 1px solid;'>Подъезд</th>
+  <th style='border-right: 1px solid;'>Домофон</th>
+  <th style='border-right: 1px solid;'>Квартира</th>
+  <th style='border-right: 1px solid;'>Примичание</th>
+</tr>
+<tr>
+  {{#each data}}
+  <td style='border-right: 1px solid;'>{{data.name}}</td>
+  <td style='border-right: 1px solid;'>{{data.phone}}</td>
+  <td style='border-right: 1px solid;'>{{data.street}}</td>
+  <td style='border-right: 1px solid;'>{{data.home}}</td>
+  <td style='border-right: 1px solid;'>{{data.port}}</td>
+  <td style='border-right: 1px solid;'>{{data.intercom}}</td>
+  <td style='border-right: 1px solid;'>{{data.flat}}</td>
+  <td style='border-right: 1px solid;'>{{data.description}}</td>
+  {{/each}}
+</tr>
+</table>

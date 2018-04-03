@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
-var nodeMailer = require("nodemailer")
+var transporter = require("../src/js/nodeMailer")
 
 
 
@@ -140,49 +140,74 @@ router.post('/registration', (req,res,next)=>{
 //POST
 
 router.post("/deliver",(req,res,next) =>{
+	if(!req.body.content){
+		var err = new Error("Данные не пришли");
+	}else{
+		let data = req.body.content;
 
+		let options = {
+			from: '"China" satndupic87@gmail.com',
+  			to: 'frontendmasterru@gmail.com',
+  			subject: "Доставка",
+  			generateTextFromHtml: true,
+		}
+		res.render("order", {layout: null, data: data} , function(err, html){
+			if(err) console.log("Ошибка в шаблоне письма!");
+			options.html = html
+				transporter.sendMail(options,(error, info)=>{
+				if(error){
+					var err = new Error("Заказ не отправился!")
+					err.status = 400;
+					return next(err);
+				}else{
+					res.send("Success")
+				}
+			})
+		})
+	}
 	// res.send("Success")
 
-	let transporter = nodeMailer.createTransport({
-		host: 'smtp.gmail.com',
-		secure: false,
-		port: 25,
-		auth: {
-			user: "satndupic87@gmail.com",
-			pass: "5827ifyz"
-		},
-		tls: {
-			rejectUnauthorized: false
-		}
-	});
+	// let transporter = nodeMailer.createTransport({
+	// 	host: 'smtp.gmail.com',
+	// 	secure: false,
+	// 	port: 25,
+	// 	auth: {
+	// 		user: "satndupic87@gmail.com",
+	// 		pass: "5827ifyz"
+	// 	},
+	// 	tls: {
+	// 		rejectUnauthorized: false
+	// 	}
+	// });
 
-	let options = {
-  			from: '"China" satndupic87@gmail.com',
-  			to: 'frontendmasterru@gmail.com',
-  			subject: "fucking you",
+	// let options = {
+ //  			from: '"China" satndupic87@gmail.com',
+ //  			to: 'frontendmasterru@gmail.com',
+ //  			subject: "fucking you",
   			// text: `${req.name},${data.phone}`
-  		}
+  		// }
 
-	if(!req.session.userId){
-
-		options.text = `${req.body.content.name},${req.body.content.phone}`;
-
-		transporter.sendMail(options,(error, info)=>{
-		if(error){
-			var err = new Error("Необходимо заполнить все поля!")
-			err.status = 400;
-			return next(err);
-		}else{
-			res.send("Success")
-			return res.redirect('/login')
-		}
-	})
-
-	}else{
+	// if(!req.session.userId){
 
 
-	}
-	console.log(req.body)
+	// 	options.text = `${req.body.content.name},${req.body.content.phone}`;
+
+	// 	transporter.sendMail(options,(error, info)=>{
+	// 		if(error){
+	// 			var err = new Error("Необходимо заполнить все поля!")
+	// 			err.status = 400;
+	// 			return next(err);
+	// 		}else{
+	// 			res.send("Success")
+	// 		}
+	// 	})
+
+
+	// }else{
+
+
+	// }
+	// console.log(req.body)
 	// console.log("helO!")
 	// res.redirect("http://localhost:8080/")
 	// return res.redirect("/")
