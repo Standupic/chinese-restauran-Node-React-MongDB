@@ -78,6 +78,9 @@ class Form extends React.Component{
   		if(res.status == 200){
   			this.props.refresh()
   		}
+  	}).catch(error=>{
+  		console.log(error)
+  		alert("Заказ не был отправлен!")
   	})
 
   		 // $.ajax({
