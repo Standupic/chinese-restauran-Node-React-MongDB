@@ -172,9 +172,10 @@ router.post("/deliver",(req,res,next) =>{
 			var err = new Error("Необходимо заполнить все поля!")
 			err.status = 400;
 			return next(err);
+		}else{
+			res.send("Success")
+			return res.redirect('/')
 		}
-		console.log("The message was sent")
-		console.log(info);
 	})
 
 	}else{
