@@ -141,7 +141,7 @@ router.post('/registration', (req,res,next)=>{
 
 router.post("/deliver",(req,res,next) =>{
 
-	res.send("Success")
+	// res.send("Success")
 
 	let transporter = nodeMailer.createTransport({
 		host: 'smtp.gmail.com',
@@ -149,7 +149,7 @@ router.post("/deliver",(req,res,next) =>{
 		port: 25,
 		auth: {
 			user: "satndupic87@gmail.com",
-			pass: "5827ifyz"
+			pass: "5827ifyq"
 		},
 		tls: {
 			rejectUnauthorized: false
@@ -169,7 +169,9 @@ router.post("/deliver",(req,res,next) =>{
 
 		transporter.sendMail(options,(error, info)=>{
 		if(error){
-			console.log(error)
+			var err = new Error("Необходимо заполнить все поля!")
+			err.status = 400;
+			return next(err);
 		}
 		console.log("The message was sent")
 		console.log(info);
