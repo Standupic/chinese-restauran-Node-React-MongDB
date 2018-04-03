@@ -174,7 +174,7 @@ router.post("/deliver",(req,res,next) =>{
 			return next(err);
 		}else{
 			res.send("Success")
-			return res.redirect('/')
+			return res.redirect('/login')
 		}
 	})
 
