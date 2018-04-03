@@ -6,8 +6,8 @@
     </tr>
         {{#each data.basket}}
           <tr style='border: 1px solid;'>
-            <td style='border: 1px solid;'>{{data.basket.name}}</td>
-            <td style='border: 1px solid;'>{{data.basket.quantity}}</td>
+            <td style='border: 1px solid;'>{{name}}</td>
+            <td style='border: 1px solid;'>{{quantity}}</td>
           </tr>
         {{/each}}
 </table>
@@ -26,7 +26,6 @@
   <th style='border-right: 1px solid;'>Примичание</th>
 </tr>
 <tr>
-  {{#each data}}
   <td style='border-right: 1px solid;'>{{data.name}}</td>
   <td style='border-right: 1px solid;'>{{data.phone}}</td>
   <td style='border-right: 1px solid;'>{{data.street}}</td>
@@ -35,6 +34,5 @@
   <td style='border-right: 1px solid;'>{{data.intercom}}</td>
   <td style='border-right: 1px solid;'>{{data.flat}}</td>
   <td style='border-right: 1px solid;'>{{data.description}}</td>
-  {{/each}}
 </tr>
 </table>
