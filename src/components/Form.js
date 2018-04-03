@@ -72,7 +72,7 @@ class Form extends React.Component{
   	sessionStorage.clear()
 
   	axios.post("/deliver",{
-  			  content: data
+  		  content: data
   	}).then(res => {
   		console.log(res)
   		if(res.status == 200){

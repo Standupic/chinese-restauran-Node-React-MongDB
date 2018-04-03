@@ -176,8 +176,9 @@ router.post("/deliver",(req,res,next) =>{
 	})
 
 	}else{
-
-
+		var err = new Error("Необходимо заполнить все поля!")
+		err.status = 400;
+		return next(err);
 	}
 	console.log(req.body)
 	// console.log("helO!")
