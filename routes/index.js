@@ -151,7 +151,7 @@ router.post("/deliver",(req,res,next) =>{
   			subject: "Доставка",
   			generateTextFromHtml: true,
 		}
-		res.render("order", {layout: null, data: data} , function(err, html){
+		res.render("order", {data: data} , function(err, html){
 			if(err) console.log("Ошибка в шаблоне письма!");
 			options.html = html
 				transporter.sendMail(options,(error, info)=>{
