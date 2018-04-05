@@ -64,6 +64,7 @@ class App extends React.Component{
 		var product = this.state.dishes.filter(d => d.quantity > 0);
 		sessionStorage.setItem("basket", JSON.stringify(product));
 		sessionStorage.setItem("dishes", JSON.stringify(result));
+		console.log(result)
 		return result
 	}
 
@@ -149,7 +150,7 @@ class App extends React.Component{
 				// basket: this.helperDecrement(this.state.basket,id),
 				basket: this.helper(this.state.basket,id,'dec'),
 				// dishes: this.helperDecrement(this.state.dishes,id),
-				dishes: this.helper(this.state.basket,id,'dec'),
+				dishes: this.helper(this.state.dishes,id,'dec'),
 
 			})	
 		}
@@ -171,7 +172,7 @@ class App extends React.Component{
 				// basket: this.helperIncrement(this.state.basket,id),
 				basket: this.helper(this.state.basket,id,'inc'),
 				// dishes: this.helperIncrement(this.state.dishes,id),
-				dishes: this.helper(this.state.basket,id,'inc'),
+				dishes: this.helper(this.state.dishes,id,'inc'),
 			})
 		this.setState(prevState => {
 			return{
