@@ -147,7 +147,7 @@ router.post("/deliver",(req,res,next) =>{
 
 		let options = {
 			from: '"China" satndupic87@gmail.com',
-  			to: 'formyphp@mail.ru',
+  			to: 'frontendmasterru@gmail.com',
   			subject: "Доставка",
   			generateTextFromHtml: true,
 		}
@@ -155,32 +155,32 @@ router.post("/deliver",(req,res,next) =>{
 			if(err) console.log("Ошибка в шаблоне письма!");
 			options.html = html
 				transporter.sendMail(options,(error, info)=>{
+				// if(error){
+				// 	var err = new Error("Заказ не отправился!")
+				// 	err.status = 400;
+				// 	return next(err);
+				// }else{
+				// 	res.send("Success")
+				// }
+			})
+		})
+			options.to = `${data.email}`;
+			options.subject = "Подтвержедния заказа Китайская стена";
+
+		res.render("confirm", {layout: null, data: data}, function(err, html){
+			if(err) console.log("Ошибка в шаблоне письма!");
+			options.html = html
+			transporter.sendMail(options,(error, info)=>{
 				if(error){
-					var err = new Error("Заказ не отправился!")
+					var err = new Error("Подтверждения не отправилось!")
 					err.status = 400;
 					return next(err);
 				}else{
-					res.send("Success")
+					res.send("Success confirm")
 				}
 			})
+
 		})
-			// options.to = `${data.email}`;
-			// options.subject = "Подтвержедния заказа Китайская стена";
-
-		// res.render("confirm", {layout: null, data: data}, function(err, html){
-		// 	if(err) console.log("Ошибка в шаблоне письма!");
-		// 	options.html = html
-		// 	transporter.sendMail(options,(error, info)=>{
-		// 		if(error){
-		// 			var err = new Error("Подтверждения не отправилось!")
-		// 			err.status = 400;
-		// 			return next(err);
-		// 		}else{
-		// 			res.send("Success confirm")
-		// 		}
-		// 	})
-
-		// })
 		// res.render("thanks", {data: data})
 	}
 })
