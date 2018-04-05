@@ -50,7 +50,8 @@ class Form extends React.Component{
   			intercom: evt.target.intercom.value,
   			flat: evt.target.flat.value,
   			area: evt.target.area.value,
-  			basket: this.props.basket
+  			basket: this.props.basket,
+  			total: this.props.total,
   		}
   		// var options = {
   		// 	from: 'satndupic87@gmail.com',

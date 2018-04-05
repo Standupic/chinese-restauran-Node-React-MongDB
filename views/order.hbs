@@ -2,18 +2,21 @@
 <table style='border: 1px solid; text-align: center; border-collapse: collapse;'>
   <tr>
     <th style='border-right: 1px solid;'>Название</th>
-      <th>{{data.name}}</th>
+      <th>Количество</th>
+      <th>Цена</th>
     </tr>
         {{#each data.basket}}
           <tr style='border: 1px solid;'>
             <td style='border: 1px solid;'>{{name}}</td>
             <td style='border: 1px solid;'>{{quantity}}</td>
+            <td style='border: 1px solid;'>{{price}}</td>
           </tr>
         {{/each}}
 </table>
+<h3>Сумма Вашего заказа: {{data.total}}</h3>
 <br/>
 <br/>
-<h4>Информация доставки</h4>"
+<h4>Информация доставки</h4>
 <table style='border: 1px solid; border-collapse: collapse; text-align: center'>
   <tr style='border: 1px solid;'>
   <th style='border-right: 1px solid;'>Имя</th>
@@ -33,6 +36,6 @@
   <td style='border-right: 1px solid;'>{{data.port}}</td>
   <td style='border-right: 1px solid;'>{{data.intercom}}</td>
   <td style='border-right: 1px solid;'>{{data.flat}}</td>
-  <td style='border-right: 1px solid;'>{{data.description}}</td>
+  <td style='border-right: 1px solid;'>{{data.area}}</td>
 </tr>
 </table>

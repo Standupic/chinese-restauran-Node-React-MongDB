@@ -250,6 +250,7 @@ class App extends React.Component{
 				{(this.state.form) ? <Form form={this.state.form}
 										   close={this.closeForm}
 										   basket={this.state.basket}
+										   total={this.state.total}
 										   refresh={this.refresh}
 										   /> : null}										  
 				

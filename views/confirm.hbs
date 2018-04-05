@@ -1,1 +1,46 @@
+<h4>Подтверждения заказа</h4>
 
+<p>Вы сделали заказ в ресторане "Китайская стена"</a></p>
+
+<table style='border: 1px solid; text-align: center; border-collapse: collapse;'>
+  <tr>
+    <th style='border-right: 1px solid;'>Название</th>
+      <th>Количество</th>
+      <th>Цена</th>
+    </tr>
+        {{#each data.basket}}
+          <tr style='border: 1px solid;'>
+            <td style='border: 1px solid;'>{{name}}</td>
+            <td style='border: 1px solid;'>{{quantity}}</td>
+            <td style='border: 1px solid;'>{{price}}</td>
+          </tr>
+        {{/each}}
+</table>
+<h3>Сумма Вашего заказа: {{data.total}}</h3>
+<br/>
+<br/>
+<h4>Информация доставки</h4>
+<table style='border: 1px solid; border-collapse: collapse; text-align: center'>
+  <tr style='border: 1px solid;'>
+  <th style='border-right: 1px solid;'>Имя</th>
+  <th style='border-right: 1px solid;'>Телефон</th>
+  <th style='border-right: 1px solid;'>Улица</th>
+  <th style='border-right: 1px solid;'>Дом</th>
+  <th style='border-right: 1px solid;'>Подъезд</th>
+  <th style='border-right: 1px solid;'>Домофон</th>
+  <th style='border-right: 1px solid;'>Квартира</th>
+  <th style='border-right: 1px solid;'>Примичание</th>
+</tr>
+<tr>
+  <td style='border-right: 1px solid;'>{{data.name}}</td>
+  <td style='border-right: 1px solid;'>{{data.phone}}</td>
+  <td style='border-right: 1px solid;'>{{data.street}}</td>
+  <td style='border-right: 1px solid;'>{{data.home}}</td>
+  <td style='border-right: 1px solid;'>{{data.port}}</td>
+  <td style='border-right: 1px solid;'>{{data.intercom}}</td>
+  <td style='border-right: 1px solid;'>{{data.flat}}</td>
+  <td style='border-right: 1px solid;'>{{data.area}}</td>
+</tr>
+</table>
+
+<p>В течение 15 минут менеджер ресторана свяжеться с Вами</p>
