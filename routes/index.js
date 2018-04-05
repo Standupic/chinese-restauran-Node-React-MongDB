@@ -164,14 +164,15 @@ router.post("/deliver",(req,res,next) =>{
 				}
 			})
 		})
-			options.to = `${data.email}`
-			options.subject = "Подтвержедния заказа Китайская стена"
+			options.to = `${data.email}`;
+			options.subject = "Подтвержедния заказа Китайская стена";
 
-		res.render("confirm", {layout: null, data: data}, function(err,html){
+		res.render("confirm", {layout: null, data: data}, function(err, html){
 			if(err) console.log("Ошибка в шаблоне письма!");
+			options.html = html
 			transporter.sendMail(options,(error, info)=>{
 				if(error){
-					var err = new Error("Заказ не отправился!")
+					var err = new Error("Подтверждения не отправилось!")
 					err.status = 400;
 					return next(err);
 				}else{
@@ -180,9 +181,7 @@ router.post("/deliver",(req,res,next) =>{
 			})
 
 		})
-		res.render("thanks", {data: data},(req, res, next)=>{
-			
-		})
+		res.render("thanks", {data: data})
 	}
 	// res.send("Success")
 
