@@ -1,41 +1,41 @@
 <h4>Информация заказа</h4>
 <table style='border: 1px solid; text-align: center; border-collapse: collapse;'>
   <tr>
-    <th style='border-right: 1px solid;'>Название</th>
-    <th>Количество</th>
+    <th style='border-right: 1px solid; padding: 3px 5px;'>Название</th>
+    <th style='border-right: 1px solid; padding: 3px 5px;'>Количество</th>
     <th>Цена</th>
   </tr>
         {{#each data.basket}}
-          <tr style='border: 1px solid;'>
-            <td style='border: 1px solid;'>{{name}}</td>
-            <td style='border: 1px solid;'>{{quantity}}</td>
-            <td style='border: 1px solid;'>{{price}}</td>
+          <tr style='border: 1px solid; padding: 3px 5px;'>
+            <td style='border: 1px solid; padding: 3px 5px;'>{{name}}</td>
+            <td style='border: 1px solid; padding: 3px 5px;'>{{quantity}}</td>
+            <td style='border: 1px solid; padding: 3px 5px;'>{{price}}</td>
           </tr>
         {{/each}}
 </table>
-<h4>Сумма Вашего заказа: {{data.total}}</h4>
+<h4>Сумма Вашего заказа: <span>{{data.total}} руб.</span></h4>
 <br/>
 <br/>
 <h4>Информация доставки</h4>
 <table style='border: 1px solid; border-collapse: collapse; text-align: center'>
-  <tr style='border: 1px solid; padding: 3px;'>
-  <th style='border-right: 1px solid; padding: 3px;'>Имя</th>
-  <th style='border-right: 1px solid; padding: 3px;'>Телефон</th>
-  <th style='border-right: 1px solid; padding: 3px;'>Улица</th>
-  <th style='border-right: 1px solid; padding: 3px;'>Дом</th>
-  <th style='border-right: 1px solid; padding: 3px;'>Подъезд</th>
-  <th style='border-right: 1px solid; padding: 3px;'>Домофон</th>
-  <th style='border-right: 1px solid; padding: 3px;'>Квартира</th>
-  <th style='border-right: 1px solid; padding: 3px;'>Примичание</th>
+  <tr style='border: 1px solid; padding: 3px 5px;'>
+  <th style='border-right: 1px solid; padding: 3px 5px;'>Имя</th>
+  <th style='border-right: 1px solid; padding: 3px 5px;'>Телефон</th>
+  <th style='border-right: 1px solid; padding: 3px 5px;'>Улица</th>
+  <th style='border-right: 1px solid; padding: 3px 5px;'>Дом</th>
+  <th style='border-right: 1px solid; padding: 3px 5px;'>Подъезд</th>
+  <th style='border-right: 1px solid; padding: 3px 5px;'>Домофон</th>
+  <th style='border-right: 1px solid; padding: 3px 5px;'>Квартира</th>
+  <th style='border-right: 1px solid; padding: 3px 5px;'>Примичание</th>
 </tr>
 <tr>
-  <td style='border-right: 1px solid;'>{{data.name}}</td>
-  <td style='border-right: 1px solid;'>{{data.phone}}</td>
-  <td style='border-right: 1px solid;'>{{data.street}}</td>
-  <td style='border-right: 1px solid;'>{{data.home}}</td>
-  <td style='border-right: 1px solid;'>{{data.port}}</td>
-  <td style='border-right: 1px solid;'>{{data.intercom}}</td>
-  <td style='border-right: 1px solid;'>{{data.flat}}</td>
-  <td style='border-right: 1px solid;'>{{data.area}}</td>
+  <td style='border-right: 1px solid; padding: 3px 5px;'>{{data.name}}</td>
+  <td style='border-right: 1px solid; padding: 3px 5px;'>{{data.phone}}</td>
+  <td style='border-right: 1px solid; padding: 3px 5px;'>{{data.street}}</td>
+  <td style='border-right: 1px solid; padding: 3px 5px;'>{{data.home}}</td>
+  <td style='border-right: 1px solid; padding: 3px 5px;'>{{data.port}}</td>
+  <td style='border-right: 1px solid; padding: 3px 5px;'>{{data.intercom}}</td>
+  <td style='border-right: 1px solid; padding: 3px 5px;'>{{data.flat}}</td>
+  <td style='border-right: 1px solid; padding: 3px 5px;'>{{data.area}}</td>
 </tr>
 </table>

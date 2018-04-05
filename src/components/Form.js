@@ -49,6 +49,7 @@ class Form extends React.Component{
   			port: evt.target.port.value,
   			intercom: evt.target.intercom.value,
   			flat: evt.target.flat.value,
+  			emaiL: evt.target.email.value,
   			area: evt.target.area.value,
   			basket: this.props.basket,
   			total: this.props.total,
@@ -103,7 +104,8 @@ class Form extends React.Component{
 								<input type="text" name="home" placeholder="Дом" required/>
 								<input type="number" name="port" placeholder="Подьезд" required/>
 								<input type="text" name="intercom" placeholder="Домофон"/>
-								<input type="number" name="flat" placeholder="Квр." required/>			
+								<input type="number" name="flat" placeholder="Квр." required/>	
+								<input type="email" name="email" placeholder="Почта" required/>		
 							</div>
 							<div className="description">
 								<textarea placeholder="Примечания к заказу" name="area" id="" cols="30" rows="5"></textarea>
