@@ -180,8 +180,8 @@ router.post("/deliver",(req,res,next) =>{
 			})
 
 		})
-		res.render("thanks", {data: data}(req, res, next)=>{
-
+		res.render("thanks", {data: data},(req, res, next)=>{
+			
 		})
 	}
 	// res.send("Success")
