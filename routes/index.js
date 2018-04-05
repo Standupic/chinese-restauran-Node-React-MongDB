@@ -176,12 +176,12 @@ router.post("/deliver",(req,res,next) =>{
 					err.status = 400;
 					return next(err);
 				}else{
-					res.send("Success")
+					res.send("Success confirm")
 				}
 			})
 
 		})
-		res.render("thanks", {data: data})
+		// res.render("thanks", {data: data})
 	}
 	// res.send("Success")
 
