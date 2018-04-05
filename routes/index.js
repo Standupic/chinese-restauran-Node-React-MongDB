@@ -163,8 +163,12 @@ router.post("/deliver",(req,res,next) =>{
 					res.send("Success")
 				}
 			})
+		})
 			options.to = `${data.email}`
 			options.subject = "Подтвержедния заказа Китайская стена"
+
+		res.render("confirm", {layout: null, data: data}, function(err,html){
+			if(err) console.log("Ошибка в шаблоне письма!");
 			transporter.sendMail(options,(error, info)=>{
 				if(error){
 					var err = new Error("Заказ не отправился!")
@@ -174,6 +178,10 @@ router.post("/deliver",(req,res,next) =>{
 					res.send("Success")
 				}
 			})
+
+		})
+		res.render("thanks", {data: data}(req, res, next)=>{
+
 		})
 	}
 	// res.send("Success")
