@@ -76,6 +76,7 @@ class Form extends React.Component{
   	axios.post("/deliver",{
   			  content: data
   	}).then(res=>{
+  		console.log(res)
   		if(res.status == 200){
   			this.props.refresh()
   		}

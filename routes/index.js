@@ -147,7 +147,7 @@ router.post("/deliver",(req,res,next) =>{
 
 		let options = {
 			from: '"China" satndupic87@gmail.com',
-  			to: 'frontendmasterru@gmail.com',
+  			to: 'formyphp@mail.ru',
   			subject: "Доставка",
   			generateTextFromHtml: true,
 		}
@@ -164,73 +164,25 @@ router.post("/deliver",(req,res,next) =>{
 				}
 			})
 		})
-			options.to = `${data.email}`;
-			options.subject = "Подтвержедния заказа Китайская стена";
+			// options.to = `${data.email}`;
+			// options.subject = "Подтвержедния заказа Китайская стена";
 
-		res.render("confirm", {layout: null, data: data}, function(err, html){
-			if(err) console.log("Ошибка в шаблоне письма!");
-			options.html = html
-			transporter.sendMail(options,(error, info)=>{
-				if(error){
-					var err = new Error("Подтверждения не отправилось!")
-					err.status = 400;
-					return next(err);
-				}else{
-					res.send("Success confirm")
-				}
-			})
+		// res.render("confirm", {layout: null, data: data}, function(err, html){
+		// 	if(err) console.log("Ошибка в шаблоне письма!");
+		// 	options.html = html
+		// 	transporter.sendMail(options,(error, info)=>{
+		// 		if(error){
+		// 			var err = new Error("Подтверждения не отправилось!")
+		// 			err.status = 400;
+		// 			return next(err);
+		// 		}else{
+		// 			res.send("Success confirm")
+		// 		}
+		// 	})
 
-		})
+		// })
 		// res.render("thanks", {data: data})
 	}
-	// res.send("Success")
-
-	// let transporter = nodeMailer.createTransport({
-	// 	host: 'smtp.gmail.com',
-	// 	secure: false,
-	// 	port: 25,
-	// 	auth: {
-	// 		user: "satndupic87@gmail.com",
-	// 		pass: "5827ifyz"
-	// 	},
-	// 	tls: {
-	// 		rejectUnauthorized: false
-	// 	}
-	// });
-
-	// let options = {
- //  			from: '"China" satndupic87@gmail.com',
- //  			to: 'frontendmasterru@gmail.com',
- //  			subject: "fucking you",
-  			// text: `${req.name},${data.phone}`
-  		// }
-
-	// if(!req.session.userId){
-
-
-	// 	options.text = `${req.body.content.name},${req.body.content.phone}`;
-
-	// 	transporter.sendMail(options,(error, info)=>{
-	// 		if(error){
-	// 			var err = new Error("Необходимо заполнить все поля!")
-	// 			err.status = 400;
-	// 			return next(err);
-	// 		}else{
-	// 			res.send("Success")
-	// 		}
-	// 	})
-
-
-	// }else{
-
-
-	// }
-	// console.log(req.body)
-	// console.log("helO!")
-	// res.redirect("http://localhost:8080/")
-	// return res.redirect("/")
-	// console.log(sessionStorage)
-	// console.log(req.body)
 })
 
 module.exports = router;
