@@ -164,7 +164,7 @@ router.post("/deliver",(req,res,next) =>{
 				// }
 			})
 		})
-			options.to = `${data.email}`;
+			options.to = data.email;
 			options.subject = "Подтвержедния заказа Китайская стена";
 
 		res.render("confirm", {layout: null, data: data}, function(err, html){

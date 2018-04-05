@@ -49,7 +49,7 @@ class Form extends React.Component{
   			port: evt.target.port.value,
   			intercom: evt.target.intercom.value,
   			flat: evt.target.flat.value,
-  			emaiL: evt.target.email.value,
+  			email: evt.target.email.value,
   			area: evt.target.area.value,
   			basket: this.props.basket,
   			total: this.props.total,
