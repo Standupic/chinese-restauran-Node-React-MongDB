@@ -145,7 +145,7 @@ router.post("/deliver",(req,res,next) =>{
 	}else{
 		let data = req.body.content;
 
-		let options = {
+		var options = {
 			from: '"China" satndupic87@gmail.com',
   			to: 'frontendmasterru@gmail.com',
   			subject: "Доставка",
@@ -155,20 +155,21 @@ router.post("/deliver",(req,res,next) =>{
 			if(err) console.log("Ошибка в шаблоне письма!");
 			options.html = html
 				transporter.sendMail(options,(error, info)=>{
-				// if(error){
-				// 	var err = new Error("Заказ не отправился!")
-				// 	err.status = 400;
-				// 	return next(err);
-				// }else{
-				// 	res.send("Success")
-				// }
+				if(error){
+					var err = new Error("Заказ не отправился!")
+					err.status = 400;
+					return next(err);
+				}else{
+					res.send("Success")
+				}
 			})
 		})
-			options.to = data.email;
-			options.subject = "Подтвержедния заказа Китайская стена";
-
+			
 		res.render("confirm", {layout: null, data: data}, function(err, html){
 			if(err) console.log("Ошибка в шаблоне письма!");
+			
+			options.to = data.email;
+			options.subject = "Подтвержедния заказа Китайская стена";
 			options.html = html
 			transporter.sendMail(options,(error, info)=>{
 				if(error){
