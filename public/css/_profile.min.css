@@ -1,0 +1,175 @@
+.wrapper{
+	overflow: hidden;
+	padding: 15px 0;
+}
+.profile {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+	flex-direction: column;
+	 -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+}
+.profile h2{
+	font-size: 1.2em;
+	font-family: RobotoRegular;
+	margin: 15px 0px;
+}
+.profile p {
+	padding: 3px 0px;
+}
+.profile .person{
+	padding-top: 20px;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.profile .person img{
+	width: 35px;
+	height: 35px;
+	margin-right: 10px;
+}
+
+.orders .wrap_item .head{
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.orders .wrap_item .head p:nth-of-type(1){
+	/*flex-grow: 1.5;*/
+}
+.orders .wrap_item .head p:nth-of-type(2){
+	/*flex-grow: 1;*/
+}
+.orders .wrap_item .head p:nth-of-type(3){
+	/*flex-grow: 1;*/
+}
+
+.orders .wrap_item {
+/*	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+     -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;*/
+}
+.orders .wrap_items .wrap_table{
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 10px 15px 5px 15px;
+    position: relative;
+}
+.orders .wrap_items .wrap_table button{
+	width: 220px;
+}
+.orders .wrap_item .item .one_position{
+	display: flex;
+	
+}
+.orders .wrap_item .item p:nth-of-type(1){
+	/*flex-grow: 1.5;*/
+	width: 300px;
+}
+.orders .wrap_item .item p:nth-of-type(2){
+	/*flex-grow: 1;*/
+}
+.orders .wrap_item .item p:nth-of-type(3){
+	/*flex-grow: 1;*/
+	width: 50px;
+}
+.orders .wrap_items .wrap_table input[type=checkbox] {
+    display: none;
+    cursor: pointer
+}
+
+.orders .wrap_items .wrap_table input[type=checkbox]+label {
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+    font-family: RobotoThin
+}
+
+.orders .wrap_items .wrap_table input[type=checkbox]+label span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0 15px 0 0;
+    vertical-align: middle;
+    background: url(../img/index3.png) right top no-repeat;
+    cursor: pointer
+}
+
+.orders .wrap_items .wrap_table input[type=checkbox]+label span+em {
+    font-style: normal
+}
+
+.orders .wrap_items .wrap_table .date{
+    position: absolute;
+    right: 25px;
+    color: gray;
+    font-size: .9em;
+    top: 5px;
+}
+.orders .wrap_items .wrap_table .total em{
+    color: red;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1em;
+}
+
+.orders .wrap_items .wrap_table table tr{
+    padding: 3px 5px;
+}
+
+.orders .wrap_items .wrap_table table tr td{
+    padding: 15px 5px;
+}
+.orders .wrap_items .wrap_table table tr td:nth-of-type(1){
+    padding: 15px 0px 15px 20px;
+    text-align: left;
+}
+
+.orders .wrap_items .active{
+    border: 1px solid red;
+}
+
+@media all and (max-width:970px) {
+    .orders .wrap_items .wrap_table input[type=checkbox]+label span {
+        margin: 0
+    }
+    .orders .wrap_items .wrap_table input[type=checkbox]+label span+em {
+        display: block
+    }
+}
+
+.orders .wrap_items .wrap_table input[type=checkbox]:checked+label span {
+    background: url(../img/index3.png) 1px top no-repeat
+}
+
+.orders button{
+	width: 220px;
+	float: right;
+}
+
+
+
+
+
+
+

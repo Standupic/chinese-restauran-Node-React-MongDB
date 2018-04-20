@@ -8,6 +8,11 @@
 	{{>footer}}
 	<!-- {{>slideBar}} -->
 </body>
+	{{#if id}}
+	<script type="text/javascript">
+		var id = "{{id}}"
+	</script>
+	{{/if}}
 	{{#each js}}
 		<script src="{{this}}"></script>
 	{{/each}}

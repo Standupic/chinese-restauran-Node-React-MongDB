@@ -8,17 +8,26 @@ var UserSchema = new mongoose.Schema({
 		required: true,
 		trim: true
 	},
-	address: {
-		type: String,
-		required: true
+	street: {
+		type: String
 	},
 	phone: {
-		type: Number,
-		required: true
+		type: String
 	},
 	port: {
-		type: Number,
-		required: true
+		type: Number
+	},
+	flat: {
+		type: Number
+	},
+	intercom: {
+		type: String,
+	},
+	home: {
+		type: String,
+	},
+	flat: {
+		type: String,
 	},
 	email: {
 		type: String,
@@ -30,14 +39,14 @@ var UserSchema = new mongoose.Schema({
 	password:{
 		type: String,
 		required: true
-	},
-	order: [{dish: String, gramm: Number, count: Number, price: Number}]
+	}
 
 },{emitIndexErrors: true})
 
+
 //middleware before save data in DB
 
-UserSchema.pre('save', function(next){
+UserSchema.pre('save', function(next){ // прежде чем записывать в базу данные
 	var user = this; // link to Schema
 	bcrypt.hash(user.password, 10, function(err, hash){
 		if(err){
@@ -82,4 +91,5 @@ UserSchema.post('save',handleE11000)
 
 
 var User = mongoose.model("User", UserSchema);
+
 module.exports = User;

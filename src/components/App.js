@@ -15,7 +15,17 @@ class App extends React.Component{
 		category: this.props.category,
 		total: 0,
 		form: false,
-		id: ""
+		id: "",
+		user: {
+			userName: null,
+			phone: null,
+			street: null,
+			home: null,
+			port: null,
+			intercom: null,
+			flat: null,
+			email: null
+		}
 	}
 	componentDidMount = () =>{
 		if(sessionStorage.getItem('basket')){
@@ -30,7 +40,23 @@ class App extends React.Component{
 				dishes: JSON.parse(sessionStorage.getItem('dishes'))
 
 			})
-		}		
+		}
+		axios.get("/deliver/user")
+			.then(res=>{
+	  			this.setState({
+	  				user: {
+	  					userName: res.data.name,
+	  					phone: res.data.phone,
+						street: res.data.street,
+						home: res.data.home,
+						port: res.data.port,
+						intercom: res.data.intercom,
+						flat: res.data.flat,
+						email: res.data.email
+	  				}
+	  			})
+	  	})
+		
 	}
 
 	// helperIncrement = (array,id) =>{
@@ -253,6 +279,7 @@ class App extends React.Component{
 										   basket={this.state.basket}
 										   total={this.state.total}
 										   refresh={this.refresh}
+										   user={this.state.user}
 										   /> : null}										  
 				
 			</div>

@@ -4,7 +4,8 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     react: './src/index.js',
-    libs: './src/js/common.js'
+    libs: './src/js/common.js',
+    profile: './src/js/profile.js'
   },
   output: {
     path: __dirname + '/public/js',

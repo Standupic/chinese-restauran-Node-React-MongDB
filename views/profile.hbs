@@ -1,10 +1,26 @@
 <div class="wrap" style="background: #eeeeee">
 	<section class="profile">
 		<div class="container">
-			<ul>
-				<li>{{{name}}}</li>
-				<li>{{{email}}}</li>
-			</ul>
+			<div class="wrapper">
+				<div class="profile">
+					<div class="person">
+						<img src="/img/profle.png" alt="" class="profile">
+						<p>{{{name}}}</p>
+					</div>
+					<h2>Ваши данные:</h2>
+					<p>Почта: {{{email}}}</p>
+					<p>Адрес: {{{street}}}</p>
+					<p>Дом: {{{home}}}</p>
+					<p>Подъезд: {{{port}}}</p>
+					<p>Домофон: {{{intercom}}}</p>
+					<p>Квартира: {{{flat}}}</p>
+				</div>
+				<div class="orders">
+					<h2>Ваши заказы:</h2>
+						<div class="wrap_items">	
+						</div>
+				</div>
+			</div>			
 		</div>
 	</section>
 </div><!--end wrap-->
