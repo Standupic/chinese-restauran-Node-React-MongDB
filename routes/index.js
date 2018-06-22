@@ -93,13 +93,14 @@ router.post("/deliver",(req,res,next) =>{
 
 		var options = {
 			from: '"China" satndupic87@gmail.com',
-  			to: 'frontendmasterru@gmail.com',
-  			subject: "Доставка",
   			generateTextFromHtml: true,
 		}
+
 		res.render("order", {layout: null, data: data} , function(err, html){
 			if(err) console.log("Ошибка в шаблоне письма!");
-			options.html = html
+			options.html = html;
+			options.to = 'frontendmasterru@gmail.com';
+			options.subject = "Доставка"
 				transporter.sendMail(options,(error, info)=>{
 				if(error){
 					var err = new Error("Заказ не отправился!")
