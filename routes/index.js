@@ -281,5 +281,4 @@ router.post('/registration', (req,res,next)=>{
 	}
 })
 // ORDER
-
 module.exports = router;
