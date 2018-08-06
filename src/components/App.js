@@ -59,20 +59,6 @@ class App extends React.Component{
 		
 	}
 
-	// helperIncrement = (array,id) =>{
-	// 	var result = array.map((dish)=>{
-	// 		if(dish._id == id){
-	// 				return Object.assign({},dish,{quantity: dish.quantity + 1})
-	// 			}else{
-	// 				return dish
-	// 		}
-	// 	})
-	// 	var product = this.state.dishes.filter(d => d.quantity > 0);
-	// 	sessionStorage.setItem("basket", JSON.stringify(product));
-	// 	sessionStorage.setItem("dishes", JSON.stringify(result));
-	// 	return result
-	// }
-
 	helper = (array,id,type) => {
 		var result = array.map((dish)=>{
 			if(dish._id == id){
@@ -90,24 +76,8 @@ class App extends React.Component{
 		var product = this.state.dishes.filter(d => d.quantity > 0);
 		sessionStorage.setItem("basket", JSON.stringify(product));
 		sessionStorage.setItem("dishes", JSON.stringify(result));
-		console.log(result)
 		return result
 	}
-
-	// helperDecrement = (array,id) =>{
-	// 	var result = array.map((dish)=>{
-	// 		if(dish._id == id){
-	// 				return Object.assign({},dish,{quantity: dish.quantity - 1})
-	// 			}else{
-	// 				return dish
-	// 		}
-	// 	})
-	// 	var product = this.state.dishes.filter(d => d.quantity > 0);
-	// 	sessionStorage.setItem("basket", JSON.stringify(product));
-	// 	sessionStorage.setItem("dishes", JSON.stringify(result));
-	// 	return result
-	// }
-
 	takeDish = (id) =>{
 		this.setState({
 	 		id: id
@@ -168,14 +138,11 @@ class App extends React.Component{
 		if(this.state.basket[index].quantity == 1){
 			this.crash(id)
 			this.setState({
-				// dishes: this.helperDecrement(this.state.dishes,id)
 				dishes: this.helper(this.state.dishes,id,"dec")
 			})
 		}else{
 			this.setState({
-				// basket: this.helperDecrement(this.state.basket,id),
 				basket: this.helper(this.state.basket,id,'dec'),
-				// dishes: this.helperDecrement(this.state.dishes,id),
 				dishes: this.helper(this.state.dishes,id,'dec'),
 
 			})	
@@ -195,9 +162,7 @@ class App extends React.Component{
 			}
 		})
 		this.setState({
-				// basket: this.helperIncrement(this.state.basket,id),
 				basket: this.helper(this.state.basket,id,'inc'),
-				// dishes: this.helperIncrement(this.state.dishes,id),
 				dishes: this.helper(this.state.dishes,id,'inc'),
 			})
 		this.setState(prevState => {
