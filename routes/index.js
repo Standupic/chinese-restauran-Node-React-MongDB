@@ -8,7 +8,7 @@ var mongoose = require("mongoose");
 
 import serverRender from '../serverRender';
 
-router.get("/",(req,res)=>{
+router.get("/", function(req,res){
 	res.render('main', { 
 				js:['js/libs.js','https://api-maps.yandex.ru/2.1/?lang=ru_RU'], 
 				css:['_main.min.css','owl.carousel_min.css']
@@ -181,14 +181,19 @@ router.get('/profile/:userid', function(req, res){ // Список заказо�
 
 router.get('/profile/repeat/:orderid', function(req, res){ // отп
 	if(req.params.orderid){
-		console.log(req.params.orderid)
+		// console.log(req.params.orderid)
+		var data = {
+			order: "",
+			user: ""
+		}
 		Order.findOne(
 			{"_id": req.params.orderid},
 			function(err, order){
 				if(err){
-					console.log(err)
+					res.status(500)
 				}else{
-					console.log(order)
+					res.status(200)
+
 				}
 			}
 
@@ -281,4 +286,5 @@ router.post('/registration', (req,res,next)=>{
 	}
 })
 // ORDER
+
 module.exports = router;

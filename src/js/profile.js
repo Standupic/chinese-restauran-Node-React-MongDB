@@ -45,6 +45,15 @@ $(document).ready(function(){
 			}else{
 				wrapTable+=`
 					<button class="repeat_order">Повторить</button>
+					<div id="popover" class="">
+						<div id="box" class="">
+							<div class="out">
+								&times;
+							</div>
+							<h1>Подтверждение заказа</h1>
+							<p></p>
+						</div>
+					</div>
 				`
 			}
 			
@@ -68,16 +77,28 @@ $(document).ready(function(){
 				orderId = $(this).attr("id");
 			})
 		}
-
+		function showPopUp(text){
+			$("#popover").addClass("slideIn")
+			$("#box").addClass("slideIn")
+			$("#box p").html(text)
+			$("#box .out").on("click", function(){
+				$("#popover").removeClass("slideIn")
+				$("#box").removeClass("slideIn")
+				window.location.href = window.location.origin
+			})
+		}
 		function sendRepeat(){
 			$(".repeat_order").on("click" ,function(){
 				$.ajax('/profile/repeat/'+ orderId, {
 					error: function(){
-						console.log("ajax error !")
+						var text = `К сожалению Ваш заказ не дошел до нас! 
+						Пожалуйста позвоните нам <a href='tel:+74957444935' itemprop='telephone'>+ 7(495)744-49-35</a>.`
+						showPopUp(text)
 					},
 					success: function(data){
+						var text = "Ваш заказ был продублирован, наш менеджер свяжеться с вами в ближайщее время!"
 						if(data){
-							
+							showPopUp(text)
 						}
 					}
 				})

@@ -655,7 +655,8 @@ button {
 .wrap_deliver .deliver_menu ul li a {
     color: #000;
     font-size: 1.1em;
-    padding: 7px 15px
+    padding: 7px 15px;
+    cursor: pointer;
 }
 
 .wrap_deliver .deliver_menu p {
@@ -1282,7 +1283,8 @@ footer .wrap_footer .wrap_content {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
-    justify-content: space-between
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #popover #box form .adress input {
