@@ -4,7 +4,7 @@ import ReactDom from 'react-dom'
 import $ from 'jquery'
 import InputMask from 'react-input-mask'
 import axios from 'axios'
-// import transport from '../js/nodeMailer'
+
 
 
 
@@ -21,7 +21,6 @@ class Form extends React.Component{
 				})
 			},300)
 		}
-		console.log(this.props.user)
 	}
 	componentWillReceiveProps(update) {
     	this.setState({ show: update.value });
@@ -49,7 +48,6 @@ class Form extends React.Component{
   	axios.post("/deliver",{
   			  content: data
   	}).then(res=>{
-  		console.log(res)
   		if(res.status == 200){
   			this.props.refresh()
   		}

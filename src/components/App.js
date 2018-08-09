@@ -232,20 +232,22 @@ class App extends React.Component{
 					  increment={this.increment}
 					  basket={this.state.basket}/>
 
-				{(this.state.basket.length > 0) ? <Basket product={this.state.basket}
-														  total={this.state.total}
-														  increment={this.increment}
-														  decrement={this.decrement}
-														  form={this.form}
-														  crashFromBasket={this.crashFromBasket}/> : null}
+				{(this.state.basket.length > 0) ? 
+				<Basket product={this.state.basket}
+						total={this.state.total}
+						increment={this.increment}
+						decrement={this.decrement}
+						form={this.form}
+						crashFromBasket={this.crashFromBasket}/> : null}
 
-				{(this.state.form) ? <Form form={this.state.form}
-										   close={this.closeForm}
-										   basket={this.state.basket}
-										   total={this.state.total}
-										   refresh={this.refresh}
-										   user={this.state.user}
-										   /> : null}										  
+				{(this.state.form) ? 
+				<Form form={this.state.form}
+					   close={this.closeForm}
+					   basket={this.state.basket}
+					   total={this.state.total}
+					   refresh={this.refresh}
+					   user={this.state.user}
+					   /> : null}										  
 				
 			</div>
 		)
