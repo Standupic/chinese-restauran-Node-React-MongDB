@@ -1,7 +1,5 @@
 require("setimmediate");
-// global.jQuery = require("jquery");
 window.$ = window.jQuery = require("jquery");
-// var $ = require("jquery")
 var mask = require("jquery-mask-plugin")
 require("../js/owl.carousel.min");
 var scrollingAPI = require("../js/ScrollingAPI.js");
@@ -38,12 +36,10 @@ var scrollingAPI = require("../js/ScrollingAPI.js");
             left: "0",
             width: "100%",
             height: "100%",
-            // top: $(document).scrollTop(),
         })
         $header.css({
             top: $(document).scrollTop()
         })
-        // addClass("menu_is_open")
         overlay_body.css({
             position: "relative",
             top: "0",

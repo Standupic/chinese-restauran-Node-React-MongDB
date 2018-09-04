@@ -1,5 +1,5 @@
 import React from 'react';
-import array from 'lodash/array'
+// import array from 'lodash/array'
 import Dish from './Dish'
 
 class Menu extends React.Component{

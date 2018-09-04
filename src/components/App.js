@@ -4,8 +4,8 @@ import axios from 'axios'
 import Menu from './Menu'
 import Basket from './Basket'
 import Form from './Form'
-import collection from 'lodash/collection'
-import array from 'lodash/array'
+// import collection from 'lodash/collection'
+// import array from 'lodash/array'
 
 
 class App extends React.Component{

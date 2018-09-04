@@ -10,7 +10,7 @@ import serverRender from '../serverRender';
 
 router.get("/", function(req,res){
 	res.render('main', { 
-				js:['js/libs.js','https://api-maps.yandex.ru/2.1/?lang=ru_RU'], 
+				js:['js/common.js','js/libs.js','https://api-maps.yandex.ru/2.1/?lang=ru_RU'], 
 				css:['_main.min.css','owl.carousel_min.css']
 				})
 })
@@ -36,7 +36,7 @@ router.get('/deliver',(req,res, next)=>{
 		.then(content =>{
 				res.render('deliver',{
 					content: content,
-					js: ['js/react.js'],
+					js: ['js/common.js','js/react.js'],
 					css: ['_deliver.min.css']
 				})
 		})
