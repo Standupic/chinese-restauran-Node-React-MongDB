@@ -63,7 +63,7 @@ router.post("/deliver",(req,res,next) =>{
 					if(err){
 						return next(err)
 					}else{
-						console.log("User updated")
+						// console.log("User updated")
 					}
 				})
 
@@ -81,7 +81,7 @@ router.post("/deliver",(req,res,next) =>{
 				if(err){
 					return next(err)
 				}else{
-					console.log("oder created")
+					// console.log("oder created")
 				}
 			})
 		}
@@ -181,23 +181,55 @@ router.get('/profile/:userid', function(req, res){ // Список заказо�
 
 router.get('/profile/repeat/:orderid', function(req, res){ // отп
 	if(req.params.orderid){
-		// console.log(req.params.orderid)
-		var data = {
-			order: "",
-			user: ""
-		}
+		// var data = {
+		// 	order: "",
+		// 	user: ""
+		// }
 		Order.findOne(
 			{"_id": req.params.orderid},
 			function(err, order){
 				if(err){
 					res.status(500)
 				}else{
-					res.status(200)
+					// console.log(order)
+					User.findById(req.session.userId)
+					.exec(function(error, user){
+						if(error){
+							return next(error)
+						}else{
+							console.log(order,"order")
+							user.basket = order.listItem
+							user.total = order.total
+							console.log(order.listItem,"listItem")
+							var options = {
+								from: '"China" satndupic87@gmail.com',
+					  			generateTextFromHtml: true,
+							}
 
+							return res.render("order", {layout: null, data: user} , function(err, html){
+								if(err) console.log("Ошибка в шаблоне письма!");
+								options.html = html;
+								options.to = 'frontendmasterru@gmail.com';
+								options.subject = "Доставка"
+									transporter.sendMail(options,(error, info)=>{
+									if(error){
+										var err = new Error("Заказ не отправился!")
+										err.status = 400;
+										return next(err);
+									}else{
+										res.send("Success")
+									}
+								})
+							})
+					
+						}
+					})
+					// res.json(order)
 				}
 			}
 
 		)
+
 	}
 })
 // LOGIN
