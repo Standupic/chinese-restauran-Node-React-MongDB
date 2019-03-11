@@ -49,9 +49,9 @@ module.exports = {
         new webpack.DefinePlugin({
            'process.env.NODE_ENV': JSON.stringify("NODE_ENV")
          }),
-        new webpack.optimize.CommonsChunkPlugin({
-          name: "common"
-        })
+        // new webpack.optimize.CommonsChunkPlugin({
+        //   name: "common"
+        // })
     ]
 };
 if(NODE_ENV == "production"){

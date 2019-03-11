@@ -9,14 +9,6 @@ axios.get('/api/dishes')
 		ReactDom.hydrate(<App
 				initialContests={res.data.dishes} category={array.uniqBy(res.data.dishes, 'category')}/>, 
 				document.getElementById("app"))
-		// this.setState({
-		// 	dishes: res.data.dishes,
-		// 	category: array.uniqBy(res.data.dishes, 'category')
-
-		// })
+	
 	})
 	.catch(console.error)	
-
-// ReactDom.hydrate(<App
-// 				initialContests={[]} category={[]}/>, 
-// 				document.getElementById("app"))

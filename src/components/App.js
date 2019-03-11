@@ -5,7 +5,7 @@ import Menu from './Menu'
 import Basket from './Basket'
 import Form from './Form'
 // import collection from 'lodash/collection'
-// import array from 'lodash/array'
+import array from 'lodash/array'
 
 
 class App extends React.Component{
