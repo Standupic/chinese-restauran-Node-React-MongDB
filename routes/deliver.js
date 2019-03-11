@@ -2,7 +2,6 @@ import serverRender from '../serverRender';
 
 var User = require('../models/user');
 var Order = require('../models/order');
-// var mongoose = require("mongoose");
 var transporter = require("../src/js/nodeMailer");
 var mail = require("./mail");
 
@@ -76,35 +75,11 @@ module.exports = {
 			res.render("order", {layout: null, data: data} , function(err, html){
 				if(err) console.log("Ошибка в шаблоне письма!");
 					mail.order(data,html, res);
-				// options.html = html;
-				// options.to = 'frontendmasterru@gmail.com';
-				// options.subject = "Доставка"
-				// 	transporter.sendMail(options,(error, info)=>{
-				// 	if(error){
-				// 		var err = new Error("Заказ не отправился!")
-				// 		err.status = 400;
-				// 		return next(err);
-				// 	}else{
-				// 		res.send("Success")
-				// 	}
-				// })
 			})
 			
 			res.render("confirm", {layout: null, data: data}, function(err, html){
 				if(err) console.log("Ошибка в шаблоне письма!");
 					mail.confirm(data, html, res);
-				// options.to = data.email;
-				// options.subject = "Подтвержедния заказа Китайская стена";
-				// options.html = html
-				// transporter.sendMail(options,(error, info)=>{
-				// 	if(error){
-				// 		var err = new Error("Подтверждения не отправилось!")
-				// 		err.status = 400;
-				// 		return next(err);
-				// 	}else{
-				// 		res.send("Success confirm")
-				// 	}
-				// })
 
 			})
 		}
