@@ -74,7 +74,7 @@ module.exports = {
 
 			res.render("order", {layout: null, data: data} , function(err, html){
 				if(err) console.log("Ошибка в шаблоне письма!");
-					mail.order(data,html, res);
+					mail.order(data, html, res);
 			})
 			
 			res.render("confirm", {layout: null, data: data}, function(err, html){
