@@ -28,29 +28,14 @@ router.get('/profile/:userid', profile.userId);
 
 router.get('/profile/repeat/:orderid', profile.orderId)
 
-// LOGIN
-
-//GET
 router.get('/login', login.login);
-
-
-//POST
 
 router.post('/login', login.post);
 
-//LogOUT
-
-//GET
 router.get('/logout', login.logOut)
 
-// REGISTRATION
-
-//GET
 router.get('/registration', registration.registration);
 
-//POST
 router.post('/registration', registration.post);
-
-// ORDER
 
 module.exports = router;

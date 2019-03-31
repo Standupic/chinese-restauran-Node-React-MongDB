@@ -240,7 +240,7 @@ button {
     height: 71px;
     -webkit-border-radius: 36px/35px 35px 36px 36px;
     border-radius: 36px/35px 35px 36px 36px;
-    background-color: #f53a39;
+    background-color: #f18217;
     border: none;
     color: #fff;
     letter-spacing: .5px;
@@ -496,7 +496,12 @@ button {
     top: 0px;
 */
 }
-
+.overlay_active{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+}
 .overlay .burger span {
     background: rgba(255, 255, 255, 0)
 }
@@ -534,16 +539,28 @@ button {
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);
-    -webkit-transition: -webkit-transform .7s;
-    transition: transform .7s;
+    -webkit-transition: transform ease .7s;
+    transition: transform ease .7s;
     overflow: auto;
     width: 250px;
     background-color: #f53a39;
     z-index: 200;
     overflow-x: hidden;
-    display: none;
+    visibility: hidden;
 }
-
+.body_overlay_active{
+    height: 100%;
+     -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+    display: block;
+    visibility: visible;
+}
+.body_overlay_intermediate{
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%); 
+}
 .body_overlay header {
     width: 100%;
     height: 65px;
@@ -619,12 +636,12 @@ button {
 
 .header .wrap_menu {
     height: 65px;
-    background-color: #f53a39
+    background-color: #000
 }
 
 .about,
 .menu_res {
-    background-color: #eee
+    background-color: #fff;
 }
 
 .header .wrap_menu .menu {
@@ -749,6 +766,7 @@ button {
     .paralax .wrap_paralax .wrap_content .content img {
         height: 200px
     }
+
 }
 
 @media all and (max-width:320px) {
@@ -758,7 +776,7 @@ button {
 }
 
 .paralax .wrap_paralax .wrap_content .content h1 {
-    font-size: 3.5em;
+    font-size: 3.2em;
     text-align: center;
     letter-spacing: .5px;
     color: #fff;
@@ -769,12 +787,20 @@ button {
     .paralax .wrap_paralax .wrap_content .content h1 {
         font-size: 2.5em
     }
+    .paralax .wrap_paralax .wrap_content{
+        height: -webkit-calc(80vh - 9px);
+        height: calc(80vh - 9px);
+    }
 }
 
-@media all and (max-width:500px) {
+@media all and (max-width:768px) {
     .paralax .wrap_paralax .wrap_content .content h1 {
         font-size: 1.3em;
-        margin: 10px 0
+        margin: 30px 0 20px 0;
+    }
+    .paralax .wrap_paralax .wrap_content{
+        height: -webkit-calc(100vh - 9px);
+        height: calc(100vh - 9px);
     }
 }
 
@@ -812,6 +838,9 @@ button {
 @media all and (max-width:1024px) {
     .about .wrap_about {
         padding: 30px 0
+    }
+    .about .wrap_about .wrap_content .wrap_items .item img {
+        max-width: 100%;
     }
 }
 
@@ -1114,8 +1143,8 @@ button {
 }
 
 .book_in {
-    background-image: url(../img/bg_book_in-min.jpg);
-    background-size: cover
+    background-image: url(../img/saperavi/background_book_in.jpg);
+    background-repeat: initial;
 }
 
 .book_in .wrap_book_in {
@@ -1349,7 +1378,7 @@ button {
 
 .book_in .wrap_book_in .wrap_content .wrap_inputs .item button {
     width: 185px;
-    background-color: #ffc617;
+    background-color: #f18217;
     color: #000;
     font-family: RobotoThin;
     height: 50px
@@ -1585,7 +1614,7 @@ footer .wrap_footer .wrap_content .wrap_items .item div {
 }
 
 footer .wrap_footer .wrap_content .wrap_items .item .time {
-    color: #f53a39;
+    color: #f18217;
     font-size: 1.1em;
     font-weight: 700;
     font-family: RobotoLight

@@ -25,44 +25,21 @@ var scrollingAPI = require("../js/ScrollingAPI.js");
     var $window    = $(window)
     var h  = $header.outerHeight()
 
-	burger.on("click",function(){
-        scrollingAPI.disableScroll();
+    burger.on("click", function(){
+        console.log("!")
+        overlay.addClass("overlay_active");
+        overlay_body.addClass("body_overlay_active");
 
-        overlay.css({
-            width: "100%",
-            height: "100%",
-            position: "fixed",
-            top: $(document).scrollTop(),
-            left: "0",
-            width: "100%",
-            height: "100%",
+            burger_sidebar.on("click", function(){
+                overlay_body.addClass("body_overlay_intermediate");
+                overlay_body.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+                    overlay.removeClass("overlay_active")
+                    overlay_body.removeClass("body_overlay_active body_overlay_intermediate")
+                })
+            burger.css("display","block")
+            scrollingAPI.enableScroll();
         })
-        $header.css({
-            top: $(document).scrollTop()
-        })
-        overlay_body.css({
-            position: "relative",
-            top: "0",
-            display: "block",
-            transform: "translateX(0)",
-            height: "100%"
-        })
-        // addClass("menu_is_open")
-        $(this).css("display","none")
-	})
-
-    burger_sidebar.on("click", function(){
-        scrollingAPI.enableScroll();
-        overlay.removeClass("menu_is_open")
-        overlay_body.removeClass("menu_is_open")
-        burger.css("display","block")
-        
     })
-
-    $window.on("scroll",function(){
-        console.log($(document).scrollTop())
-    })
-    // console.log($(document).scrollTop())
 
     function fixedMenu(){
         if ($(this).scrollTop() <= h && $header.hasClass("fixed")) {
@@ -103,7 +80,7 @@ var scrollingAPI = require("../js/ScrollingAPI.js");
             $(this).prop("checked",false)
         })
         $(this).next().prop("checked",true)
-        $(this).css("background","yellow");
+        $(this).css("background","#f18217");
     })
 
     $("input[type='checkbox']").on("click", function(){
@@ -111,7 +88,7 @@ var scrollingAPI = require("../js/ScrollingAPI.js");
             $(e).prev().css("background","white");
             $(this).prop("checked",false)
         })
-            $(this).prev().css("background","yellow");
+            $(this).prev().css("background","#f18217");
             $(this).prop("checked",true)
     })
     
