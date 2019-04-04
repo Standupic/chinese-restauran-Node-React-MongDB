@@ -2,7 +2,7 @@ var transporter = require("../src/js/nodeMailer")
 
 module.exports = {
 	options: {
-		from: '"China" satndupic87@gmail.com',
+		from: '"Саперави" saperaviluberzy@gmail.com',
 	  	generateTextFromHtml: true,
 	},
 	reserve: (data, html, res) => {  
