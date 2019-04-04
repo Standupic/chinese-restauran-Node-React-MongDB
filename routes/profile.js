@@ -18,7 +18,7 @@ module.exports = {
 				return res.render('profile',{
 									mainPage: false,
 									title: "Личный кабинет",
-									css: ['_main.min.css','_profile.min.css'],
+									css: ['_main.min.css','_profile.min.css','bodyStyle.css'],
 									js: ['js/profile.js'],
 									id: user._id,
 									name: user.name,
