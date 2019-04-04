@@ -6,7 +6,8 @@ module.exports = {
   entry: {
     react: './src/index.js',
     libs: './src/js/common.js',
-    profile: './src/js/profile.js'
+    profile: './src/js/profile.js',
+    deliver: './src/js/deliver.js',
   },
 
   output: {

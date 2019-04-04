@@ -3,46 +3,45 @@ window.$ = window.jQuery = require("jquery");
 var mask = require("jquery-mask-plugin")
 require("../js/owl.carousel.min");
 var scrollingAPI = require("../js/ScrollingAPI.js");
+import jump from 'jump.js';
 
 
  $(document).ready(function(){
-    
     $('#phone').mask('+7'+'(999) 999-9999');
 
     function checkMQ(){
 		return window.getComputedStyle(document.querySelector(".wrap"), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
 	}
 
-	var burger = $(".mobile_menu > .burger");
+	var burger = $(".mobile_menu .burger");
     var burger_sidebar = $(".body_overlay .krest .burger")
 	var sidemenu = $(".sidemenu");
 	var paralax = $(".paralax");
     var body = $("body")
     var overlay = $(".overlay")
     var overlay_body = $(".body_overlay")
-    var wrap = $(".wrap") 
-    var $header   = $(".header") 
-    var $window    = $(window)
-    var h  = $header.outerHeight()
+    var $header = $(".header");
+    var $window = $(window);
+    var h  = $header.outerHeight();
 
     burger.on("click", function(){
-        console.log("!")
         overlay.addClass("overlay_active");
         overlay_body.addClass("body_overlay_active");
+    })
 
-            burger_sidebar.on("click", function(){
-                overlay_body.addClass("body_overlay_intermediate");
-                overlay_body.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-                    overlay.removeClass("overlay_active")
-                    overlay_body.removeClass("body_overlay_active body_overlay_intermediate")
-                })
-            burger.css("display","block")
-            scrollingAPI.enableScroll();
-        })
+   burger_sidebar.on("click", function(){
+            overlay_body.addClass("body_overlay_intermediate");
+            overlay_body.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+                overlay.removeClass("overlay_active")
+                overlay_body.removeClass("body_overlay_active body_overlay_intermediate")
+                overlay_body.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+            })
+        burger.css("display","block")
+        scrollingAPI.enableScroll();
     })
 
     function fixedMenu(){
-        if ($(this).scrollTop() <= h && $header.hasClass("fixed")) {
+        if ($window.scrollTop() <= h && $header.hasClass("fixed")) {
             $header.fadeOut('fast', function(){
                 $header.removeClass("fixed")
                 $header.fadeIn('fast')
@@ -56,7 +55,10 @@ var scrollingAPI = require("../js/ScrollingAPI.js");
              })
         }
     }
-
+   
+    $(document).scroll(function(){
+        fixedMenu()
+     })
 
     $('.owl-carousel').owlCarousel({
         loop:true,
@@ -101,24 +103,31 @@ var scrollingAPI = require("../js/ScrollingAPI.js");
             if($(this).val() === ""){
                 $(this).next().after("<div class='error'>Заполните поле</div>")
                 flag = true;
-            }else{
-
             }
         })
         if(flag) {return false;} else {
                $.ajax({
                 type: "POST", //Метод отправки
-                url: "send.php", //путь до php фаила отправителя
+                url: "/reserve", //путь до php фаила отправителя
                 data: data,
                 success: function() {
                        //код в этом блоке выполняется при успешной отправке сообщения
                        alert("Ваше сообщение отправлено!");
                 }
             });
+               $("#form input").each(function(i,item){
+                if(item.type == "checkbox"){
+                    $(item).prev().css("background","white");
+                    $(item).prop("checked",false)
+                }else{
+                    $(item).val("")
+                }
+            })
         }
     })
 
     ymaps.ready(init);
+
     function init(){
         var map = new ymaps.Map("map",{ 
         center: [55.682549, 37.865436],
@@ -132,12 +141,24 @@ var scrollingAPI = require("../js/ScrollingAPI.js");
         map.behaviors.disable('scrollZoom');
         map.behaviors.disable('drag');
     }
+    const easeInOutQuad = (t, b, c, d) => {
+        t /= d / 2
+        if (t < 1) return c / 2 * t * t + b
+        t--
+        return -c / 2 * (t * (t - 2) - 1) + b
+    }
 
    $(".go_to").on('click', function(e){
         e.preventDefault();
         var href = $(this).attr('data-go');
-        $('html, body').animate({ scrollTop: $(href).offset().top }, 500);
-        return false
+        console.log(href)
+        jump(href, {
+          duration: 1000,
+          offset: 0,
+          callback: undefined,
+          easing: easeInOutQuad,
+          a11y: false
+        })
     });
 
 });

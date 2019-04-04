@@ -5,7 +5,6 @@ import Dish from './Dish'
 class Menu extends React.Component{
 	takedish = (id) =>{
 		return () => {
-			// id
 			this.props.takeDish(id)
 		}
 	}
@@ -20,6 +19,9 @@ class Menu extends React.Component{
 	}
 	increment = (id) =>{
 		this.props.increment(id)
+	}
+	handlerSelect = (e)=>{
+		this.props.takeDish(e.target.value*1)
 	}
 	render(){
 		const dishA= this.props.category.map((dish,key)=>{
@@ -36,6 +38,13 @@ class Menu extends React.Component{
 				)
 			}
 		})
+		const dishes = [...dishA, ...dishB];
+		const options = this.props.category.map((dish, key)=>{
+			return(
+				<option value={dish.category} key={key}>{dish.dish}</option>
+			)
+		})
+
 		return(
 			<div>
 				<h1>Meню</h1>
@@ -53,6 +62,12 @@ class Menu extends React.Component{
 					<ul>
 						{dishB}
 					</ul>
+					<p className="select">
+						<select onChange={this.handlerSelect}>
+							<option>Выберите блюда</option>
+							{options}
+						</select>
+					</p>
 				</div>
 					<Dish items={this.props.dishes}
 						  id={this.props.id}

@@ -17,6 +17,7 @@
     "connect-mongo": "^2.0.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "jump.js": "^1.0.2",
     "lodash": "^4.17.4",
     "mongodb": "^2.2.33",
     "mongoose": "^4.10.8",

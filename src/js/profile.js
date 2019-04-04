@@ -3,7 +3,16 @@ window.$ = window.jQuery = require("jquery");
 
 $(document).ready(function(){
 	var orderId = "",
-	    index = "";
+	    index = "",
+		burger = $(".mobile_menu .burger"),
+    	burger_sidebar = $(".body_overlay .krest .burger"),
+		sidemenu = $(".sidemenu"),
+    	overlay = $(".overlay"),
+    	overlay_body = $(".body_overlay"),
+    	$header = $(".header"),
+    	$window = $(window),
+    	h  = $header.outerHeight();
+
 	$.ajax("/profile/" + id,{
 		dataType: 'json',
 		error: function(){
@@ -18,7 +27,7 @@ $(document).ready(function(){
 				wrapTable+=`
 				<div class="wrap_table">
 					<span class='date'>${el.date}</span>
-					<table style='text-align: center; width: 85%'>
+					<table class="table_order">
 						<tr>
 							 <th style='width: 300px; text-align: left; color: #F53A39; font-weight: bold; color: #F53A39;'>Название</th>
 	   						 <th style='padding: 3px 5px; color: #F53A39;'>Количество</th>
@@ -118,6 +127,40 @@ $(document).ready(function(){
 				})
 			})
 		}
+		burger.on("click", function(){
+        overlay.addClass("overlay_active");
+        overlay_body.addClass("body_overlay_active");
+    })
 
-	})
+	   	burger_sidebar.on("click", function(){
+	            overlay_body.addClass("body_overlay_intermediate");
+	            overlay_body.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+	                overlay.removeClass("overlay_active")
+	                overlay_body.removeClass("body_overlay_active body_overlay_intermediate")
+	                overlay_body.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+	            })
+	        burger.css("display","block")
+	        scrollingAPI.enableScroll();
+	    })
+	    function fixedMenu(){
+	        if ($window.scrollTop() <= h && $header.hasClass("fixed")) {
+	            $header.fadeOut('fast', function(){
+	                $header.removeClass("fixed")
+	                $header.fadeIn('fast')
+	            })
+
+	        }
+	    	if ($window.scrollTop() > h && $header.hasClass("fixed") == false){
+	             $header.fadeOut('fast', function(){
+	                $header.addClass("fixed")
+	                $header.fadeIn('fast')
+	             })
+	        }
+	    }
+	   
+	    $(document).scroll(function(){
+	        fixedMenu()
+	     })
+
+})
 

@@ -28,6 +28,7 @@ class App extends React.Component{
 		}
 	}
 	componentDidMount = () =>{
+		console.log('Did')
 		if(sessionStorage.getItem('basket')){
 			var basket = JSON.parse(sessionStorage.getItem('basket'))
 			var total = 0;
@@ -43,6 +44,7 @@ class App extends React.Component{
 		}
 		axios.get("/deliver/user")
 			.then(res=>{
+				if(!Object.keys(res.data).length) return
 	  			this.setState({
 	  				user: {
 	  					userName: res.data.name,
@@ -79,6 +81,7 @@ class App extends React.Component{
 		return result
 	}
 	takeDish = (id) =>{
+		console.log(id)
 		this.setState({
 	 		id: id
 		})
@@ -197,6 +200,7 @@ class App extends React.Component{
 	}
 	form = ()=>{
 		this.setState(prev => ({form: !prev.form}))
+
 	}
 	refresh = ()=>{
 		this.setState({

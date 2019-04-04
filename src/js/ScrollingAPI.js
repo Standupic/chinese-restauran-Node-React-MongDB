@@ -18,7 +18,7 @@ var ScrollingAPI = (function(){
 
   var disableScroll = function() {
     if (window.addEventListener) // older FF
-        window.addEventListener('DOMMouseScroll', preventDefault, false);
+        window.addEventListener('DOMMouseScroll', preventDefault, true);
     window.onwheel = preventDefault; // modern standard
     window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
     window.ontouchmove  = preventDefault; // mobile
@@ -27,7 +27,7 @@ var ScrollingAPI = (function(){
 
   var enableScroll = function() {
       if (window.removeEventListener)
-          window.removeEventListener('DOMMouseScroll', preventDefault, false);
+          window.removeEventListener('DOMMouseScroll', preventDefault, true);
       window.onmousewheel = document.onmousewheel = null; 
       window.onwheel = null; 
       window.ontouchmove = null;  

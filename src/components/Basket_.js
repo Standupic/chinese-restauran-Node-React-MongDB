@@ -31,11 +31,12 @@ class Basket extends React.Component{
 		return `translateY(${a})px`
 	}
 	render(){
+		const translateY = (50*this.props.product.length > 300) ? 300 : 50*this.props.product.length;
 		const product = this.props.product.map((dish,key)=>{
 			return(
 				<ul key={key}>
 					<li className="name" itemProp="name" itemProp="hasMenu">{dish.name}</li>
-					<li className="gramm">{dish.gramm}</li>
+					<li className="gramm">{dish.gramm > 0 ? dish.gramm : null }{dish.gramm ? "гр" : "шт"}</li>
 					<li className="quanti"><em>Количество</em>
 
 					<Decrement decrement={this.decrement} id={dish._id}/>
@@ -52,13 +53,13 @@ class Basket extends React.Component{
 			)
 		})
 		return(
-		<section className="basket" style={(!this.state.show) ? {transform: `translateY(${50*this.props.product.length}px)`} : {transform: `translateY(0px)`,transition: `transform .7s`}}>
+		<section className="basket" style={(!this.state.show) ? {transform: `translateY(${translateY}px)`} : {transform: `translateY(0px)`,transition: `transform .7s`}}>
 			<div className="container">
 				<div className="wrap_basket">
 					<div className="wrap_items">
 						<div className="item">
 							<img src="../img/recycle.svg" alt=""/>
-							<div className="mobile"><span className="order"></span></div>
+							<div className="mobile"><span className="order" onClick={this.show}>{this.props.product.length}</span></div>
 							<div className="desktop"><span>Количество заказов: <em className="order">{this.props.product.length}</em></span><a className="show" onClick={this.show}>{(this.state.show ? "скрыть" : "показать")}</a></div>
 						</div>
 						<div className="item">

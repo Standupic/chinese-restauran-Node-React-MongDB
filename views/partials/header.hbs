@@ -3,16 +3,25 @@
 			<div class="container">
 				<div class="menu">
 					<div class="logo" itemscope itemtype="http://schema.org/Restaurant">
-						<a href="/"><img src="../img/saperavi/logo-text.svg" alt="Рестора Саперави" itemprop="logo" itemprop="photo"></a>
+						<a href="/"><img src="../img/saperavi/logo-text.svg" alt="Ресторан Саперави" itemprop="logo" itemprop="photo"></a>
 					</div>
 					<div class="list_menu">
 						<ul>
-							<li><a href="/" itemscope itemtype="http://schema.org/Restaurant" itemprop="url">О ресторане</a></li>
-							<li><a href="/" itemscope itemtype="http://schema.org/Restaurant" itemprop="url" itemscope itemtype="http://schema.org/Restaurant" itemprop="url">Шеф</a></li>
-							<li><a href="/deliver" itemscope itemtype="http://schema.org/Restaurant" itemprop="url">Меню</a></li>
-							<li><a href="/" itemscope itemtype="http://schema.org/Restaurant">Резерв</a></li>
-							<li><a href="/" itemscope itemtype="http://schema.org/Restaurant">Отзывы</a></li>
-							<li><a href="/" data-go="#contact" class="go_to">Контакты</a></li>
+							{{#if mainPage}}
+								<li><a href="/" data-go=".about" class="go_to" itemscope itemtype="http://schema.org/Restaurant" itemprop="url">О ресторане</a></li>
+								<li><a href="#" data-go=".cook" class="go_to" itemscope itemtype="http://schema.org/Restaurant" itemprop="url" itemscope itemtype="http://schema.org/Restaurant" itemprop="url">Шеф</a></li>
+								<li><a href="/deliver" itemscope itemtype="http://schema.org/Restaurant" itemprop="url">Меню</a></li>
+								<li><a href="#" data-go=".book_in" class="go_to" itemscope itemtype="http://schema.org/Restaurant">Резерв</a></li>
+								<li><a href="#" data-go=".feel_back" class="go_to" itemscope itemtype="http://schema.org/Restaurant">Отзывы</a></li>
+								<li><a href="#" data-go=".footer" class="go_to">Контакты</a></li>
+							{{else}}
+								<li><a href="/"  itemscope itemtype="http://schema.org/Restaurant" itemprop="url">О ресторане</a></li>
+								<li><a href="/"  itemscope itemtype="http://schema.org/Restaurant" itemprop="url" itemscope itemtype="http://schema.org/Restaurant" itemprop="url">Шеф</a></li>
+								<li><a href="/deliver" itemscope itemtype="http://schema.org/Restaurant" itemprop="url">Меню</a></li>
+								<li><a href="/"  itemscope itemtype="http://schema.org/Restaurant">Резерв</a></li>
+								<li><a href="/"  itemscope itemtype="http://schema.org/Restaurant">Отзывы</a></li>
+								<li><a href="/">Контакты</a></li>
+							{{/if}}
 							{{#if currentUser}}
 								<li><a href="/logout">Выход</a>
 								<li><a href="/profile">Личный кабинет</a></li>
@@ -25,17 +34,17 @@
 						</ul>
 					</div>
 					<div class="tel" itemscope itemtype="http://schema.org/Restaurant">
-						<a href="tel:+74957444935" itemprop="telephone">+ 7(495)744-00-55</a>
+						<a href="tel:+74952952620" itemprop="telephone">+ 7(495)295-26-20</a>
 					</div>
 				</div>
  				<div class="mobile_menu">
 					<div class="logo" itemscope itemtype="http://schema.org/Restaurant">
-						<img src="../img/logo_text.svg" alt="Грузинский ресторан" itemprop="logo" itemprop="photo">
+						<img src="../img/saperavi/logo-text.svg" alt="Грузинский ресторан Саперави" itemprop="logo" itemprop="photo">
 					</div>
 						<a href="#" class="burger">
 							<span></span>
 						</a>
-						<a href="tel:+74957444935" class="tell"><img src="../img/phone.svg" alt=""></a>
+						<a href="tel:+74952952620" class="tell"><img src="../img/phone.svg" alt=""></a>
 					<div class="sidemenu">
 						<ul>
 							<li class="has-children">

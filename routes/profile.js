@@ -16,6 +16,7 @@ module.exports = {
 					return next(error);
 			}else{
 				return res.render('profile',{
+									mainPage: false,
 									title: "Личный кабинет",
 									css: ['_main.min.css','_profile.min.css'],
 									js: ['js/profile.js'],
@@ -32,16 +33,13 @@ module.exports = {
 		})
 	},
 	userId: (req, res) => {
-		console.log("Getting user orders");
 		if(req.params.userid){
 			Order.find(
 			{'userId': req.params.userid},
 			function(err, order){
 				if(!err){
-					console.log(order)
 					res.json(order)
 				}else{
-					console.log(err)
 					res.json({"status": "error", "error": "Error finding order"})
 				}
 			})

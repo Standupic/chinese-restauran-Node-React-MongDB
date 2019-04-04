@@ -64,7 +64,8 @@ button {
 
 body,
 html {
-    overflow-x: hidden
+    overflow-x: hidden;
+    background: #eeeeee;
 }
 
 .error {
@@ -87,7 +88,7 @@ section {
 footer .container,
 section .container {
     max-width: 1250px;
-    padding: 0 25px !important;
+    padding: 0 25px;
     width: 100%;
     margin: 0 auto
 }
@@ -95,7 +96,7 @@ section .container {
 button {
     -webkit-border-radius: 36px/35px 35px 36px 36px;
     border-radius: 36px/35px 35px 36px 36px;
-    background-color: #f53a39;
+    background-color: #f18217;
     border: none;
     color: #fff;
     letter-spacing: .5px;
@@ -107,7 +108,7 @@ button {
     border-top: 1px solid #fff
 }
 .active{
-    border: 2px solid #f53a39;
+    border: 2px solid #f18217;
 }
 .burger {
     width: 36px;
@@ -291,7 +292,7 @@ button {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    background: url(../img/cd-arrow.svg)
+/*    background: url(../img/cd-arrow.svg)*/
 }
 
 .overlay,
@@ -329,20 +330,8 @@ button {
     }
 }
 
-.overlay {
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background: rgba(0, 0, 0, .5);
-    visibility: hidden;
-    z-index: 100;
-    overflow-y: hidden;
-    opacity: 0;
-    -webkit-transition: visibility .7s;
-    transition: visibility .7s
-}
 
-.overlay .body_overlay,
+/*overlay .body_overlay,
 #popover #box {
     -webkit-transition: -webkit-transform .7s;
     transition: transform .7s;
@@ -460,11 +449,11 @@ button {
 .menu_is_open {
     visibility: visible;
     opacity: 1
-}
+}*/
 
 .header .wrap_menu {
     height: 65px;
-    background-color: #f53a39
+    background-color: #000
 }
 
 .header .wrap_menu .menu {
@@ -544,13 +533,14 @@ button {
 .wrap_deliver h1 {
     font-size: 2.5em;
     text-align: center;
-    margin: 30px 0
+    padding: 30px 0
 }
 
 @media all and (max-width:1150px) {
     .wrap_deliver h1 {
         text-align: center;
-        margin: 30px 0
+        margin: 30px 0;
+        padding: 0;
     }
 }
 
@@ -583,7 +573,7 @@ button {
 
 .wrap_deliver .toogle ul .active,
 .wrap_deliver .toogle ul li:hover {
-    border: 1px solid #f53a39
+    border: 1px solid #f18217
 }
 
 @media all and (max-width:360px) {
@@ -658,6 +648,9 @@ button {
     padding: 7px 15px;
     cursor: pointer;
 }
+.wrap_deliver .deliver_menu ul li a:hover{
+    color: #f18217;
+}
 
 .wrap_deliver .deliver_menu p {
     margin: 0 auto;
@@ -688,8 +681,8 @@ button {
     -ms-flex-flow: wrap;
     flex-flow: wrap;
     margin-top: 50px;
-    /*-webkit-justify-content: space-between;*/
-    /*justify-content: space-between;*/
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
     -ms-flex-pack: distribute;
 }
 
@@ -728,7 +721,7 @@ button {
 
 @media all and (max-width:420px) {
     .wrap_deliver .wrap_items .item {
-        width: 320px
+        width: 300px
     }
 }
 
@@ -872,8 +865,8 @@ button {
     right: 0;
     width: 100%;
     background-color: #fff;
-    -webkit-transition: §-webkit-transform .7s;
-    /*transition: transform .7s;*/
+    /*-webkit-transition: -webkit-transform .5s;*/
+    /*transition: transform .5s;*/
     -webkit-transform: translateY(50px);
     -ms-transform: translateY(50px);
     transform: translateY(50px);
@@ -970,7 +963,7 @@ button {
 }
 
 .basket .wrap_basket .wrap_items .item a {
-    color: #f53a39;
+    color: #f18217;
     margin-left: 10px;
     cursor: pointer
 }
@@ -1088,7 +1081,7 @@ button {
 }
 
 .basket .wrap_list .item ul .delete {
-    color: #f53a39
+    color: #f18217
 }
 
 @media all and (max-width:480px) {
@@ -1096,10 +1089,13 @@ button {
         display: none
     }
     .basket .wrap_list .item ul .delete {
-        font-size: 2em;
+        font-size: .9em;
         text-decoration: none;
         font-weight: 700;
         margin-bottom: 3px
+    }
+    .basket .wrap_list .item ul .delete:hover{
+        cursor: pointer;
     }
 }
 
@@ -1151,7 +1147,7 @@ button {
     -webkit-transform: translateY(-220%);
     -ms-transform: translateY(-220%);
     transform: translateY(-220%);
-    transition: transform .7s ease-in 1s;
+    transition: transform .7s ease-in .7s;
     /*-webkit-transition-delay: .5s;*/
     /*transition-delay: .5s*/
 }
@@ -1339,7 +1335,11 @@ footer .wrap_footer .wrap_content {
     visibility: visible!important;
     transition: transform .7s;
 }
-
+.basket_intermediate{
+   -webkit-transform: translateY(0)!important;
+    -ms-transform: translateY(0)!important;
+    transform: translateY(0)!important; 
+}
 .hidden {
     opacity: 0!important;
     visibility: hidden!important
@@ -1483,7 +1483,7 @@ footer .wrap_footer .wrap_content .wrap_items .item div {
 }
 
 footer .wrap_footer .wrap_content .wrap_items .item .time {
-    color: #f53a39;
+    color: #f18217;
     font-size: 1.1em;
     font-weight: 700;
     font-family: RobotoLight

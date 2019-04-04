@@ -17,6 +17,8 @@ module.exports = {
 					res.send(user)
 				}
 			})
+		}else{
+			return res.send({})
 		}
 	}, 
 	post: (req, res, next) => {
@@ -67,11 +69,6 @@ module.exports = {
 	}else{
 			var data = req.body.content;
 
-			var options = {
-				from: '"China" satndupic87@gmail.com',
-	  			generateTextFromHtml: true,
-			}
-
 			res.render("order", {layout: null, data: data} , function(err, html){
 				if(err) console.log("Ошибка в шаблоне письма!");
 					mail.order(data, html, res);
@@ -89,8 +86,9 @@ module.exports = {
 		.then(content =>{
 				res.render('deliver',{
 					content: content,
-					js: ['js/common.js','js/react.js'],
-					css: ['_deliver.min.css']
+					mainPage: false,  
+					js: ['js/deliver.js','js/react.js'],
+					css: ['_deliver.min.css',"_side_menu.min.css"]
 				})
 		})
 		.catch(console.error)

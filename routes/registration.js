@@ -3,7 +3,8 @@ var User = require('../models/user');
 module.exports = {
 	registration: (req, res, next)=>{
 		res.render('registration',{
-			css:['_main.min.css']
+			mainPage: false,
+			css:['_main.min.css','bodyStyle.css']
 		})
 	},
 	post: (req, res, next)=>{

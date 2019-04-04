@@ -71,9 +71,7 @@ class Dish extends React.Component{
 						<p itemProp="description">
 							{dish.ingredient}
 						</p>
-						<p><span>{dish.price} ₽</span><em>
-							{dish.gram ? "гр" : "шт"}
-						</em></p>
+						<p><span>{dish.price} ₽</span><em>/{dish.gramm == 0 ? null : dish.gramm}{dish.gramm ? "гр" : "шт"}</em></p>
 
 							<Button id={dish._id} 
 									toBasket={this.toBasket} 

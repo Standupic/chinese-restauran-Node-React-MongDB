@@ -3,7 +3,8 @@ var User = require('../models/user');
 module.exports = {
 	login: (req, res, next) => {
 		res.render('login',{
-			css: ['_main.min.css']
+			mainPage: false,
+			css: ['_main.min.css','bodyStyle.css']
 		})
 	},
 	logOut: (req, res, next) =>{
