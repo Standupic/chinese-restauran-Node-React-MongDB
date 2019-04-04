@@ -8,7 +8,7 @@ module.exports = {
 	reserve: (data, html, res) => {  
 		var self = module.exports;
 		self.options.html = html;
-		self.options.to = 'frontendmasterru@gmail.com';
+		self.options.to = 'saperaviluberzy@gmail.com';
 		self.options.subject = "Резерв или организация мероприятия"
 			transporter.sendMail(self.options,(error, info)=>{
 			if(error){
@@ -23,7 +23,7 @@ module.exports = {
 	order: (data, html, res) => {  
 		var self = module.exports;
 		self.options.html = html;
-		self.options.to = 'frontendmasterru@gmail.com';
+		self.options.to = 'saperaviluberzy@gmail.com';
 		self.options.subject = "Доставка"
 			transporter.sendMail(self.options,(error, info)=>{
 			if(error){

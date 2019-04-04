@@ -28,7 +28,6 @@ class App extends React.Component{
 		}
 	}
 	componentDidMount = () =>{
-		console.log('Did')
 		if(sessionStorage.getItem('basket')){
 			var basket = JSON.parse(sessionStorage.getItem('basket'))
 			var total = 0;
