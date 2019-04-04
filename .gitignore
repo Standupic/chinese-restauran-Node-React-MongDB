@@ -1,2 +1,3 @@
 node_modules
 src/js/nodeMailer.js
+api/index.js
