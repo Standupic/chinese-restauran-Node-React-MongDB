@@ -686,7 +686,7 @@ button {
     -ms-flex-pack: distribute;
 }
 
-@media all and (max-width:1023px) {
+@media all and (max-width:1024px) {
     .wrap_deliver .wrap_items {
         -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
