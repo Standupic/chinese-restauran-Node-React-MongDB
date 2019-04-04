@@ -14,7 +14,7 @@ const server = express();
 // DB server
 // mongodb://localhost:27017/china 
 
-mongoose.connect("mongodb://localhost:27017/china",{
+mongoose.connect("mongodb://standupic:1987svet@localhost:27017/admin",{
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE,
   useMongoClient: true

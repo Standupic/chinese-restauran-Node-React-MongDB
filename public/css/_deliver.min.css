@@ -1198,7 +1198,7 @@ button {
         top: -20px
     }
     #popover #box h3 {
-        margin: 15px 0
+        margin: 5px 0
     }
 }
 
@@ -1284,7 +1284,7 @@ footer .wrap_footer .wrap_content {
 }
 
 #popover #box form .adress input {
-    margin-right: 15px
+    margin-right: 5px
 }
 
 #popover #box form .adress input:last-child {
@@ -1296,7 +1296,7 @@ footer .wrap_footer .wrap_content {
         width: 100%
     }
     #popover #box form .adress input {
-        width: 50%
+        width: 48%
     }
 }
 
