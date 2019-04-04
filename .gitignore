@@ -1,4 +1,4 @@
 node_modules
-src/js/nodeMailer.js
-api/index.js
+#src/js/nodeMailer.js
+#api/index.js
 package-lock.json
