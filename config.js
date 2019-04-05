@@ -12,5 +12,6 @@ export default {
 
 // server
 // 188.225.25.82
+//saperavirestro.ru
 // local
 // 0.0.0.0
