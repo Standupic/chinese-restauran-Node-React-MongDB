@@ -18,7 +18,7 @@ MongoClient.connect(url, function(err,db){
 const router = express.Router();
 
 router.get("/dishes", (req,res)=>{
-	mdb.collection("china").find({})
+	mdb.collection("saperavi").find({})
 	.toArray(function(err, docs){
 		assert.equal(null, err)
 		res.send({dishes: docs})
