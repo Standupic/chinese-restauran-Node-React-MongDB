@@ -13,6 +13,7 @@ const server = express();
 
 // DB server
 // mongodb://localhost:27017/china 
+//mongodb://standupic:1987svet@localhost:27017/admin
 
 mongoose.connect("mongodb://standupic:1987svet@localhost:27017/admin",{
   keepAlive: true,

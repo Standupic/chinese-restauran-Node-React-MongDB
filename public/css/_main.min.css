@@ -917,7 +917,8 @@ button {
 }
 
 .cook {
-    background-image: url(../img/cook_bg-min.jpg)
+    background-image: url(../img/cook_bg-min.jpg);
+    display: none;
 }
 
 .cook .wrap_cook {
@@ -1034,8 +1035,13 @@ button {
     }
 }
 
+.menu_res {
+    display: none;
+}
+
 .menu_res .wrap_menu_res {
     padding: 100px 0
+
 }
 
 @media all and (max-width:768px) {
